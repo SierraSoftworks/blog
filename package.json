@@ -22,6 +22,6 @@
     "markdown-it-abbr": "^1.0.4",
     "markdown-it-footnote": "^3.0.3",
     "mermaid": "^8.13.6",
-    "vuepress-vite": "^2.0.0-beta.29"
+    "vuepress-vite": "^2.0.0-beta.38"
   }
 }
