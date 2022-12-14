@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "2.0.0-beta.51",
+    "@vuepress/plugin-google-analytics": "2.0.0-beta.59",
     "@vuepress/plugin-register-components": "^2.0.0-beta.51",
     "@vuepress/theme-default": "2.0.0-beta.51",
     "dayjs": "^1.11.5",
