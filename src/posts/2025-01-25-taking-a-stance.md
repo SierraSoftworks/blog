@@ -192,7 +192,7 @@ important than cost management, it requires very careful consideration when atte
 
 Specifically, the challenge with implementing multiple strategies in parallel is that, unless one is
 careful to isolate the strategies from one another, they will often end up competing for the same
-resources and thus increasing contention (\$alpha$) in the system. Placing deadlines on delivery, which
+resources and thus increasing contention ($\alpha$) in the system. Placing deadlines on delivery, which
 is a common practice in organizations, serves only to further increase contention ($\alpha$) and also
 increase coherency ($\beta$) as teams are forced to align their delivery schedules.
 
@@ -235,7 +235,7 @@ effort with $\beta \gt 0$ we can expect to see a reduction in impact as the syst
 This is the pitfall tackled in [Eli Goldratt's "The Goal"](https://en.wikipedia.org/wiki/The_Goal_%28novel%29)
 in which he discusses the Theory of Constraints and the idea that the most effective means of improving
 a system is to identify and address bottlenecks (reducing $\alpha$) and implementing appropriate buffering
-strategies which leverage backpressure to provide loose-ordering between entities (keeping `\$beta$ low).
+strategies which leverage backpressure to provide loose-ordering between entities (keeping \$beta$ low).
 
 The challenge here is that, as a leader, the people you are responsible for are not in fact incentivized
 to deliver impact. Instead, they are incentivized to convince you that they have delivered the desired
@@ -285,5 +285,5 @@ their actions as being valid within their own context and easily forgive them.
 
 When taking a broader view of the role that those people play in your life over time, you are
 likely to find that those whose actions are justified in an incompatible context are likely to
-destamilize or harm your own quality of life over time, even if they are currently valued.
+destabilise or harm your own quality of life over time, even if they are currently valued.
 :::
