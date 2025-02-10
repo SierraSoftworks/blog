@@ -98,7 +98,7 @@ it unfortunately hasn't integrated yet. The most glaringly obvious of these is t
 secrets management functionality. For a tool which comes "batteries included" for everything else, these are
 problems which really stand out - because they require actual effort to address.
 
-Swarm also lacks any kind of automated loadbalancer, something which Kubernetes and Rancher both provide
+Swarm also lacks any kind of automated load-balancer, something which Kubernetes and Rancher both provide
 and which greatly simplifies exposing your services. This is a problem easily solved using something like
 [Traefik][traefik], something I have covered doing [here](/2016/12/11/traefik-on-swarm), but like the volume
 problem - it's something which is glaring in its absence from Swarm itself.

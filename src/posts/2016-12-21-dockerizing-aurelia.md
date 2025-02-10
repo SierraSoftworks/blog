@@ -77,7 +77,7 @@ their lives and enable them to deliver a higher quality and more reliable servic
 
 ## Building the Docker Image
 
-Our Docker image is going to need to run a small fileserver to serve the Aurelia
+Our Docker image is going to need to run a small file-server to serve the Aurelia
 application files. To do this, we're going to use [Nginx](https://hub.docker.com/_/nginx/), it's [Alpine](https://alpinelinux.org/) Linux
 variant in particular which clocks in at a total of some 20MB.
 

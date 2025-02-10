@@ -7,6 +7,8 @@ tags:
     - development
     - linux
     - splashtop
+
+# cspell:ignore postcount
 ---
 
 # ExpressGate

@@ -154,7 +154,7 @@ behaviour to suit their use cases is a critical feature for building that initia
 #### "Bring your own checks"
 It is important to realize that most of your customers will not be coming from a green-field environment, rather they will bring
 along years or even decades of existing check infrastructure and asking them to flush it all to make the switch to your stack is going
-to be a tricky conversation to have. Instead, making support for arbitrary datasources a core feature of your service will enable you to
+to be a tricky conversation to have. Instead, making support for arbitrary data-sources a core feature of your service will enable you to
 onboard teams with legacy monitoring infrastructure quickly, begin delivering value and then drive modernization on the backbone of you
  more advanced functionality rather than through a barrier to entry.
 
@@ -167,9 +167,9 @@ considering having your stack integrate with your customers' existing infrastruc
 to solve tomorrow's problems and designing it based on the tools of yester-decade will only serve to slow your progress,
 detract from the simplicity of your stack and reduce its agility.
 
-Instead, focus on defining a fully featured and well structured API through which any potential datasource may submit events for processing and
+Instead, focus on defining a fully featured and well structured API through which any potential data-source may submit events for processing and
 tune their behaviour. Once you have that, build microservices or plugins which are responsible for doing elementary data transformation and ingestion on behalf
-of your legacy systems and have them consume that API directly. This approach allows you to add support for new data sources without needing to touch your core
+of your legacy systems and have them consume that API directly. This approach allows you to add support for new data-sources without needing to touch your core
 service, enables you to create bespoke integrations for each of your customers with minimal effort and even allows you to offload particularly costly operations
 to a fleet of stateless data transformation agents before events even reach your stack.
 

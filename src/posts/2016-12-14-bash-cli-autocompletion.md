@@ -8,7 +8,7 @@ tags:
   - bash
   - opensource
 
-# cspell:ignore compgen, CWORD, COMPREPLY
+# cspell:ignore compgen, CWORD, COMPREPLY, iname
 ---
 
 # Autocompletion for Bash CLI
