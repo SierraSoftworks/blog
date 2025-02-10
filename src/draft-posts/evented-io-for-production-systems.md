@@ -6,6 +6,8 @@ tags: ["development", "patterns"]
 draft: true
 sitemap: false
 comments: false
+
+# cspell:ignore evented
 ---
 
 I've just spent the last month rewriting the core component in a monitoring stack which is responsible for protecting the availability

@@ -3,10 +3,12 @@ title: Scheduled Backups with Kubernetes
 date: 2017-11-01 20:32:07
 permalinkPattern: :year/:month/:day/:slug/
 tags:
-    - kuberentes
+    - kubernetes
     - operations
     - cdn
     - s3
+
+# cspell:ignore pipefail, DCOS
 ---
 
 # Scheduled Backups with Kubernetes

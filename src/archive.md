@@ -18,6 +18,7 @@ sitemap:
 
 </div>
 
+<!-- cspell:disable -->
 <script lang="ts">
 import {onMounted, ref, reactive, computed} from 'vue'
 import {posts} from '@temp/posts'

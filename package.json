@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src --dest dist",
-    "lint": "markdownlint-cli2 '**/*.md' '#node_modules'"
+    "lint": "markdownlint-cli2 '**/*.md' '#node_modules'",
+    "spell": "cspell lint --gitignore '**/*.md'"
   },
   "license": "MIT",
   "devDependencies": {
@@ -23,10 +24,11 @@
     "@vuepress/plugin-sitemap": "^2.0.0-rc.74",
     "@vuepress/theme-default": "2.0.0-rc.74",
     "@vuepress/utils": "2.0.0-rc.19",
+    "cspell": "^8.17.3",
     "dayjs": "^1.11.13",
-    "markdownlint-cli2": "0.17.2",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
+    "markdownlint-cli2": "0.17.2",
     "mermaid": "^11.4.1",
     "sass-embedded": "^1.83.1",
     "vuepress": "2.0.0-rc.19"

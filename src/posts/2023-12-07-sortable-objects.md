@@ -112,6 +112,7 @@ we would need to implement our own sort function to perform the necessary transf
 Let's do that, and take the time to implement this in a clean and reusable manner.
 We'll start by implementing support for converting our `Complex` type to polar coordinates.
 
+<!-- cspell:ignore powi -->
 ```rust
 impl Complex {
     pub fn new(real: f64, imaginary: f64) -> Self {

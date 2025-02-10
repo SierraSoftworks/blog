@@ -329,7 +329,7 @@ and as such the only resolutions that will work are the actual resolutions suppo
  - [ExpressGate Updater Patch][patch]
  - [DeviceVM Version File Update Tool][dvmversion]
  - [DeviceVM Header File Update Tool][dvmheader]
- - [Gervais' DeviceVM IOFS Driver][dvmiofs] - From the Asus ExpressGate tarbal. Should allow access to the ExpressGate SSD's file system **to be tested**
+ - [Gervais' DeviceVM IOFS Driver][dvmiofs] - From the Asus ExpressGate tarball. Should allow access to the ExpressGate SSD's file system **to be tested**
  - Weisshund's SplashTop Files (Mirrored from: [http://weisshund.net16.net/splashtop](http://weisshund.net16.net/splashtop) | Last Updated *23/07/2010*)
    - [va-ar-tools.sqx][va-ar-tools.sqx] - The ARchiver, allows you to work with .DEB files from within SplashTop
    - [va-storage.sqx][va-storage.sqx] - An SQX file that provides functions for mounding a windows HDD into the /media folder.

@@ -55,7 +55,7 @@ more people in will highlight the missing piece of information which unlocks the
 this will simply leave you with a larger group of people who are confused about how to proceed.
 
 There is a critical point in this process where the group of investigators grows large enough that the available
-bandwidth outstrips the amount of information which can be analyzed under the current investigative directions
+bandwidth outstrips the amount of information which can be analysed under the current investigative directions
 and it is this point which I am most interested in today.
 
 Coincidentally, it is this point that I found myself in 2 weeks ago, 2 weeks into an extremely complex

@@ -8,6 +8,8 @@ categories:
 tags:
     - git
 comments: true
+
+# cspell:ignore libgit2
 ---
 
 # .gitignore </3 Unicode
@@ -52,6 +54,7 @@ and I had no reason to doubt that it would work perfectly.
 
 I then added a new entry to the `.gitignore` file manually, leaving it looking like this:
 
+<!-- cspell:disable -->
 ```gitignore
 # Created by https://www.gitignore.io/api/go
 # Edit at https://www.gitignore.io/?templates=go
@@ -79,6 +82,7 @@ I then added a new entry to the `.gitignore` file manually, leaving it looking l
 # New addition
 junit.xml
 ```
+<!-- cspell:enable -->
 
 And yet, Git would dutifully offer to add all of my `junit.xml` files to my repository
 whenever I ran `git status`...

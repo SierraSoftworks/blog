@@ -12,6 +12,8 @@ categories:
 tags:
     - sre
     - theory
+
+# cspell:ignore: PACELC
 ---
 
 # What is Site Reliability Engineering?

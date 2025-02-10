@@ -24,9 +24,9 @@ line syntax makes creating shortcuts for your favourite mod configurations dead 
     a predefined mod set, or to join a specific server. This allows you to get into the game
     faster than ever before, or publish server specific startup packages for your players.
 
- - **Easily select groups of mods using ArmA2ML's [regular expession](http://en.wikipedia.org/wiki/regular_expressions) selection engine.**
+ - **Easily select groups of mods using ArmA2ML's [regular expression](http://en.wikipedia.org/wiki/regular_expressions) selection engine.**
 
-    By adopting [regular expessions](http://en.wikipedia.org/wiki/regular_expressions) you are able to select groups of
+    By adopting [regular expressions](http://en.wikipedia.org/wiki/regular_expressions) you are able to select groups of
     similarly named mods using a single selection expression. You can also use exclusion expressions to use negative selection matching
     in cases where wish to select all of your mods except for a few.
 
@@ -114,7 +114,7 @@ The `-silent` option will force the application to not show any information abou
 The `-mod` parameter will take a single mod search. These searches are formatted using Regular Expressions.
 Some of the things you will want to know when using RegEx are:
 
- - RegEx will match text in any part of the mod name. So if you enter "C" it will match @ACE; Campaings etc.
+ - RegEx will match text in any part of the mod name. So if you enter "C" it will match @ACE; Campaigns etc.
  - If you enter @ACE the application will also match @ACEX; @ACEX_PLA and @ACEX_SM.
    If you would like to only match @ACE then either use Explicit mode or enter ^@ACE$ as your RegEx search argument.
  - The application adds the following functionality to the standard RegEx features.

@@ -6,6 +6,8 @@ tags:
     - web
 categories:
     - web
+
+# cspell:ignore Pygments, Sagalaev
 ---
 
 # Code Highlighters
@@ -53,7 +55,7 @@ integrate with [Drupal][drupal], since that is the platform I'm currently runnin
 
 ### [GeSHi][geshi]
 GeSHi was the first highlighter I tried on our website, mainly because it was the most comprehensively supported on Drupal. Overall, the
-installation and configuration was painless, requring you to add the GeSHi library to your `sites/all/libraries` folder and then enable
+installation and configuration was painless, requiring you to add the GeSHi library to your `sites/all/libraries` folder and then enable
 the module. One of the complaints I have about GeSHi on Drupal however is the lack of customizability in terms of styling that is provided
 by the Drupal module, and the lack of integration with Markdown. One of the nice things about GeSHi though, is the ability to select which
 languages you wish to support from within the Drupal module, and even configure their shortcuts. If you're looking for a highlighter which
@@ -75,7 +77,7 @@ As a test of the how well the highlighter was written, I attempted to write my o
 features (like function names and escape sequences within strings). I can honestly say that doing so was an absolute pleasure, a testament to how well
 written the API for Prettify is. Something which I would have liked to see is a document detailing the exposed methods, and what each of their parameters is,
 thankfully I was able to figure this out by looking at the code and some of the other highlighters. In fact, from a developer perspective, the only issue
-I had with Prettify was that the build script did not work correctly on my Ubuntu box, a pitty since I would have loved to contribute my changes to the project.
+I had with Prettify was that the build script did not work correctly on my Ubuntu box, a pity since I would have loved to contribute my changes to the project.
 
 Integration of Prettify with Drupal was also somewhat painless, however not nearly as much so as GeSHi, particularly due to the way Prettify and
 Markdown on Drupal interact. The issue is that Markdown wraps code in *pre* tags, but doesn't provide any way to set CSS classes on these tags.
@@ -89,7 +91,7 @@ to tell Prettify what type of code you are using. In the end, I ended up modifyi
 definitely could have been neater. With any luck, functionality like that will be added in a new version of Markdown or Markdown Extra.
 
 ### [Highlight.js][highlight_js]
-Last, but certianly not least, is Highlight.js. Highlight.js is written and maintained by Ivan Sagalaev and development takes place on
+Last, but certainly not least, is Highlight.js. Highlight.js is written and maintained by Ivan Sagalaev and development takes place on
 [GitHub][highlight_js_github]. One of the first things that you will notice is missing in Highlight.js is the ability to generate line numbers,
 Ivan wrote a good post detailing his reasons for avoiding doing so [here](http://highlightjs.readthedocs.org/en/latest/line-numbers.html), but if you require
 that functionality then you are probably better off sticking with one of the above highlighters. Of the three highlighters I am reviewing here however,
@@ -120,7 +122,7 @@ to their development repository was a day ago) while Prettify hasn't had any new
 Something to also keep in mind is that client side libraries need to prioritize size and performance over anything else, failure to do so can
 easily result in massive penalties to a website which uses the libraries. GeSHi and Pygments on the other hand have no such restrictions,
 they should prioritize performance but since most sites will end up caching their output, it is not a massive concern. As such, server side
-highighters generally have far superior highlighting implementations than their client side cousins.
+highlighters generally have far superior highlighting implementations than their client side cousins.
 
 [geshi]: http://qbnz.com/highlighter/
 [pygments]: http://pygments.org/

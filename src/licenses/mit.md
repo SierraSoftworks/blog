@@ -37,6 +37,7 @@ the content of the license itself and is not a substitute for understanding the 
 
 ## The License
 
+<!-- cspell:disable -->
 ```
 Copyright © 2025 Sierra Softworks
 

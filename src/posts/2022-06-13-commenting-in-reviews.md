@@ -64,7 +64,7 @@ it is you're trying to accomplish.
 
 The first trap that we'll often find ourselves in is the idea that we need to comment as a
 reviewer. After all, you've been asked to review something, surely that means there must be
-something that can only be improved by your input. Theres's a great story about
+something that can only be improved by your input. There's a great story about
 [A Duck](https://blog.codinghorror.com/new-programming-jargon/) which captures this crazy problem
 in an amusing story, but the reality is that it is okay to review something and say "this looks
 good to me". Used well, it'll save everyone a lot of time and emotional effort.

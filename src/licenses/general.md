@@ -39,7 +39,7 @@ the content of the license itself and is not a substitute for understanding the 
 
 ```
 This licence shall apply to all versions, editions and future updates to Sierra Softworks
-software and consistutes a legal agreement between you (the "Licensee") and Sierra Softworks
+software and constitutes a legal agreement between you (the "Licensee") and Sierra Softworks
 (the "Licensor").
 
 By installing, running or downloading the Licensor's software, making use of the Licensor's
@@ -53,7 +53,7 @@ and account with the Licensor.
 Sierra Softworks reserves all rights to software and services released, and unreleased, developed by
 Sierra Softworks and Benjamin Pannell.
 
-Sierra Softworks grants a non-transferrable and non-exclusive licence to use Sierra Softworks software
+Sierra Softworks grants a non-transferable and non-exclusive licence to use Sierra Softworks software
 and services for non-commercial purposes. The Licensee may not disassemble, decompile, reverse engineer,
 redistribute (in any form), create derivative works of, or modify Sierra Softworks applications or services
 in any way without prior written permission from Sierra Softworks.
@@ -68,12 +68,12 @@ the Licensee's possession.
 By accepting this licence, the Licensee agrees not to download, install, run or otherwise make use of Sierra Softworks
 software or services in any region in which such action would result in the violation of any law or ordinance.
 
-This licence shall be construed in accordance with and goverened by the applicable laws of Ireland. Exclusive venue
+This licence shall be construed in accordance with and governed by the applicable laws of Ireland. Exclusive venue
 for all litigation involving this agreement shall be in Dublin, Ireland. 
 
-Licensee agrees that any portion of this agreement found to be invalid or unenforcable shall be modified,
+Licensee agrees that any portion of this agreement found to be invalid or unenforceable shall be modified,
 to the extend allowed by law, so as to allow the enforcement of the original intended meaning of the portion
-found to be invalid or unenforcable.
+found to be invalid or unenforceable.
 
 SIERRA SOFTWORKS SOFTWARE IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTY OF ANY KIND INCLUDING,
 BUT NOT LIMITED TO, AND WITHOUT LIMITATION, THAT IT IS FREE OF DEFECTS, FIT FOR A PARTICULAR PURPOSE,

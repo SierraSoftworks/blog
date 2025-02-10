@@ -180,7 +180,7 @@ materials, the amount of stress required to increase strain (burnout) will no lo
 be linear and may in fact decrease while increasing strain (burnout).
 
 When it comes to people, this is the point at which you'll almost certainly start
-to notice a change in their behavior. They may start to withdraw from the team,
+to notice a change in their behaviour. They may start to withdraw from the team,
 become more cynical, argumentative, and/or express displeasure at aspects of their
 environment that they previously accepted. You're also likely to notice them exhibiting
 signs of physical, emotional, or mental exhaustion, as well as being more sensitive

@@ -18,6 +18,8 @@ tags:
   - rust
   - development
   - advent-of-code
+
+# cspell:ignore functools
 ---
 
 # Iterators in Rust
@@ -179,12 +181,12 @@ impl<'a> Iterator for NumberIterator<'a> {
             self.input = &self.input[1..];
 
             // If the character is a digit, then we'll add it to
-            // our scratchpad
+            // our scratch-pad
             if c.is_digit(10) {
                 digits.push(c);
 
             // If the character isn't a digit, and we have some
-            // digits in our scratchpad, then we've clearly hit
+            // digits in our scratch-pad, then we've clearly hit
             // the end of a number and can proceed to parsing.
             } else if !digits.is_empty() {
                 break;

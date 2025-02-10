@@ -34,10 +34,10 @@ they have, and a model which enables us to take appropriate actions regardless.
 <!-- more -->
 
 ## Naming the Problem
-Fundamentally, we can boil our problem down to a simple control system whose goal is to safisty a
+Fundamentally, we can boil our problem down to a simple control system whose goal is to satisfy a
 desired outcome, where what is desired may vary and the outcome may be influenced by external factors.
 
-```mermaid A diagram showing a simple control system which attempts to safisty a desired outcome
+```mermaid A diagram showing a simple control system which attempts to satisfy a desired outcome
 flowchart LR
     Input[Desired Outcome] --> Actor[System]
     Actor --> Output[Realized Outcome]
@@ -47,7 +47,7 @@ In most practical systems there is usually some form of feedback loop which allo
 system to observe the outcome and adjust its behaviour accordingly - in control system theory this is
 known as "Feedback Control".
 
-```mermaid A diagram showing a feedback control system which attempts to safisty a desired outcome
+```mermaid A diagram showing a feedback control system which attempts to satisfy a desired outcome
 flowchart LR
     Input[Desired Outcome] --> Sum((\+)) --> Actor[System]
     Actor --> Output[Realized Outcome]
@@ -88,7 +88,7 @@ involved.
 ## Quantifying the Challenge
 While this pattern exists within all [complex systems](https://how.complexsystems.fail), there are many cases
 where it is possible to achieve the desired outcome with limited difficulty. While it is tempting to chalk this
-up to luck or skill, in practice there are quantifyable factors which influence success.
+up to luck or skill, in practice there are quantifiable factors which influence success.
 
 At the heart of this is the [universal scalability law](http://www.perfdynamics.com/Manifesto/USLscalability.html)
 which states that a system's relative performance increase as you add resources is governed by three factors:
@@ -109,7 +109,7 @@ far harder to scale - which explains why the best restaurants in the world are u
 What you'll regularly find is that systems which appear to scale easily either have a low scaling factor ($N$),
 require a limited amount of coordination ($\alpha$), and have very low contention ($\beta$). Translating this
 into organizational terms, this means that small companies often benefit from increased innovation efficiency
-relative to their larger bretheren, and companies which are able to reduce the need for coordination and allow
+relative to their larger brethren, and companies which are able to reduce the need for coordination and allow
 teams to deliver independently are far more capable to scale up without losing that efficiency.
 
 This forms the foundation for several organizational design properties, such as the need for clear communication,
@@ -127,7 +127,7 @@ be flexible about when we achieve our goals (you don't need to be a millionaire 
 by the time you leave university, or be working in Big Tech by the time you're 25, etc).
 
 Conversely, attempting to control when things happen across multiple areas of your life is likely going to lead
-to a failure to be able to invest enough time in any of them to excell at them.
+to a failure to be able to invest enough time in any of them to excel at them.
 :::
 
 ### Common Pitfalls
@@ -235,7 +235,7 @@ effort with $\beta \gt 0$ we can expect to see a reduction in impact as the syst
 This is the pitfall tackled in [Eli Goldratt's "The Goal"](https://en.wikipedia.org/wiki/The_Goal_%28novel%29)
 in which he discusses the Theory of Constraints and the idea that the most effective means of improving
 a system is to identify and address bottlenecks (reducing $\alpha$) and implementing appropriate buffering
-strategies which leverage backpressure to provide loose-ordering between entities (keeping \$beta$ low).
+strategies which leverage back-pressure to provide loose-ordering between entities (keeping \$beta$ low).
 
 The challenge here is that, as a leader, the people you are responsible for are not in fact incentivized
 to deliver impact. Instead, they are incentivized to convince you that they have delivered the desired

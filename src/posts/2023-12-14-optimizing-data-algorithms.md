@@ -17,6 +17,8 @@ tags:
   - rust
   - advent-of-code
   - development
+
+# cspell:ignore Amadahl
 ---
 
 # Optimizing Data Algorithms
@@ -287,7 +289,7 @@ with.
 ::: tip
 When we consider only the contention cost ($\alpha$), and assume that the coherency cost ($\beta$) is zero,
 the equation simplifies to $C(n) = \frac{n}{1 + \alpha (n-1)}$ which is the same as Amdahl's Law. The empirical
-description of Amadahl's Law is that the maximum speedup you can achieve by parallelizing a system is limited
+description of Amadahl's Law is that the maximum speed-up you can achieve by parallelizing a system is limited
 by the proportion of the system which is inherently serial (i.e. the proportion of the system which cannot be
 parallelized) - in other words, the point at which the system's performance is entirely limited by contention
 on shared resources.

@@ -217,6 +217,7 @@ of magnitude, so if you're able to use an array, you really should.
 
 Looking to our Fibonacci example, we can write the dynamic programming example as follows:
 
+<!-- cspell:disable -->
 ```rust
 fn fibonacci(n: usize) -> u32 {
     if n < 2 {
@@ -233,6 +234,7 @@ fn fibonacci(n: usize) -> u32 {
     cache[n]
 }
 ```
+<!-- cspell:enable -->
 
 Something interesting that you'll note about this example is that we're initializing our cache with its
 full size from the start. When it come to high performance algorithms, re-allocating memory is one of the

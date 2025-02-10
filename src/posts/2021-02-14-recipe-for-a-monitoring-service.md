@@ -13,6 +13,8 @@ tags:
     - development
     - operations
     - theory
+
+# cspell:ignore Moogsoft, Loggly, Sensu, Kubeless
 ---
 
 # Blueprint for a Monitoring Stack
@@ -118,7 +120,7 @@ you really don't want to have to try and clean up a noisy event stream as a huma
 
 The monitoring stack should **provide added value** over and above what is available from a basic check system like [Nagios][].
 This might mean that it attaches **additional, useful, context** to the events it presents, is able to route
-**problems to thepeople who can fix them** and allows **configuration by customers**.
+**problems to the people who can fix them** and allows **configuration by customers**.
 
 With that in mind, you're looking to build a stack which takes what you probably have already (a stream of events indicating
 that things have broken) and intelligently presents those events, at the right time, to the right people with all of the
@@ -268,7 +270,7 @@ plugins:
       params:
         content: |
             ## Description
-            This instance's healthcheck has failed, which indicates that it is no longer
+            This instance's health-check has failed, which indicates that it is no longer
             able to serve traffic. **It will be automatically removed from the load balancer**
             and traffic will be routed to other instances automatically.
 
@@ -379,8 +381,8 @@ need a lot of time and effort invested into improving their reliability.
 #### Ticketing
 Regardless of whether you decide to page someone or not, you should have a ticket to track the work being performed to fix a problem. It doesn't
 much matter whether this ticket is being cut in [Jira](https://www.atlassian.com/software/jira), [GitHub](https://www.github.com) or your own
-in-house issue tracker. The point is that when someone starts working to triage an issue, they shoud have somewhere to document what they are
-doing and keep a record of whatever followup needs to take place.
+in-house issue tracker. The point is that when someone starts working to triage an issue, they should have somewhere to document what they are
+doing and keep a record of whatever follow-up needs to take place.
 
 If you have decided that an event doesn't warrant a page, but should be looked at by a team, then placing a ticket in their work backlog is a
 great way to ensure that it gets processed without the cost of interrupting their daily workflow.

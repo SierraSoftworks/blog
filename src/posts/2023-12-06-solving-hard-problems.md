@@ -165,7 +165,7 @@ one of the reasons why.
 ### Lack of Motivation
 This brings us to the absolute worst challenge of them all: lack of motivation.
 As people, we have a tendency to blame ourselves or others for lacking motivation,
-but in my experience this ignores the fact that motivation is a byproduct of our
+but in my experience this ignores the fact that motivation is a by-product of our
 environment and our interpretation of that environment.
 
 In other words, if you take anybody and place them in an environment where they

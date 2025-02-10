@@ -3,7 +3,7 @@ title: Illusions as a Service
 description: |
     The typical tech sales pitch you'll see today, especially in the age of AI,
     reads more like a magician's prelude than the matter-of-fact boxes your
-    grandfather's (or granmother's) drill came in. Let's talk a bit about
+    grandfather's (or grandmother's) drill came in. Let's talk a bit about
     reality, business decisions, and understanding what you're buying in a world
     where sellers control the narrative.
 
@@ -18,8 +18,8 @@ tags:
 
 # Illusions as a Service
 The world today strikes a particularly jarring contrast with the one I grew up
-in. Buzz-words and gimicks have taken center stage in an environment where a
-"cheap" alternative can be found for thruppence on the quart (or however that
+in. Buzz-words and gimmicks have taken center stage in an environment where a
+"cheap" alternative can be found for threepence on the quart (or however that
 monetary system worked).
 
 To compete in a sea of identical products, companies pitch differentiating
@@ -49,7 +49,7 @@ you choose.
 :::
 
 ## The illusion of choice
-Humans are gullible (and liable to get irritated if you point this out...woops).
+Humans are gullible (and liable to get irritated if you point this out...whoops).
 Marketing and sales departments know this all too well, and one of the fun
 wrenches they like to use to percussively encourage you to part with your money
 involves giving you the choice of anything you could possibly want, so long as

@@ -68,7 +68,7 @@ threads and instead implementing some form of application-level concurrency.
 
 ### Green Threads
 Different languages will use different names for these: coroutines, fibers, futures,
-goroutines, tasks... All of them are an application-level implementation of the same
+Go-routines, tasks... All of them are an application-level implementation of the same
 concurrency and scheduling features found in native operating system threads.
 
 While [Green treads](https://en.wikipedia.org/wiki/Green_threads) themselves started
@@ -122,7 +122,11 @@ def get_numbers():
 When this method runs, it executes in the following order, waiting for each
 call to `get_number(n)` to complete before proceeding to the next.
 
-```mermaid: A diagram showing how get_numbers calls the get_number methods in order, waiting for each to complete, before returning the list of results.
+<!-- cspell:disable -->
+```mermaid
+# A diagram showing how get_numbers calls the get_number methods in order,
+# waiting for each to complete, before returning the list of results.
+
 graph LR
     caller --> getn1
 
@@ -133,6 +137,7 @@ graph LR
     style caller stroke:orange,fill:orange,color:black
     style return stroke:green,fill:lightgreen,color:black
 ```
+<!-- cspell:enable -->
 
 But `get_number(n)` is meant to be a slow network request in our example, so
 there's no work for us to do while we wait for the result of the first call.
@@ -199,6 +204,7 @@ def get_numbers():
 This results in the execution "fanning out" and then combining again to
 arrive at the final result.
 
+<!-- cspell:disable -->
 ```mermaid
 # A diagram showing how get_numbers spawns three threads, waiting for each to complete, before returning the list of results.
 
@@ -218,6 +224,7 @@ flowchart LR
     style getn2 stroke:yellow
     style getn3 stroke:red
 ```
+<!-- cspell:enable -->
 
 At first glance, this looks pretty good - but the diagram does a good job
 of lying to you by omission. Recall that the caller is waiting on the
@@ -340,6 +347,7 @@ important thing to note here is that we're never leaving the calling
 thread but we are still able to run multiple concurrent state machines.
 This is a great example of the different between concurrency and parallelism.
 
+<!-- cspell:disable -->
 ```mermaid
 # A diagram showing how each state machine cycles through its internal states until it is complete,
 # at which point the results are aggregated to return the final values.
@@ -372,6 +380,7 @@ flowchart LR
     style gn2 stroke:yellow
     style gn3 stroke:red
 ```
+<!-- cspell:enable -->
 
 ### Re-entrant Functions
 In languages which allow you to pass functions as values, you can take advantage of this
@@ -462,7 +471,11 @@ As with the state machine flow, this code executes on a single thread and allows
 us to run all of the `get_numbers()` calls concurrently, calling the (hidden)
 `next()` method until we receive the result we are looking for.
 
-```mermaid: A diagram showing how each is polled until it is complete, at which point the results are aggregated to return the final values.
+<!-- cspell:disable -->
+```mermaid
+# A diagram showing how each is polled until it is complete,
+# at which point the results are aggregated to return the final values.
+
 flowchart LR
     caller --> getn
 
@@ -491,6 +504,7 @@ flowchart LR
     style gn2 stroke:yellow
     style gn3 stroke:red
 ```
+<!-- cspell:enable -->
 
 ### Iterators and Generators
 If you're sitting there thinking *"This looks a lot like iterator/enumerator/generator pattern"*
@@ -648,6 +662,7 @@ This code executes identically to the re-entrant functions example, but simplify
 the `get_number()` function starts to highlight something interesting:
 how we can wait for concurrent work within our functions.
 
+<!-- cspell:disable -->
 ```python{25-29,37-39}
 from datetime import datetime, timedelta
 from typing import Iterator, Union
@@ -720,6 +735,7 @@ def get_numbers():
         for future in futures
     ]
 ```
+<!-- cspell:enable -->
 
 ::: danger
 So what happens if we don't `yield` while we wait for `wait_n()` to complete on line 39?

@@ -15,6 +15,8 @@ tags:
   - sre
   - balance
 comments: true
+
+# cspell:ignore Nickolas, Analytica, Stenning, Petoff
 ---
 # Designing Human Systems
 
@@ -78,6 +80,7 @@ There's an excellent talk by Nickolas Means on Lockheed Martin's Skunk Works tea
 were formed. Without a doubt, they're an example of an exceptional team of engineers delivering
 some of the most amazing engineering achievements of the past 50 years. Go and watch it, I'll wait.
 
+<!-- cspell:disable-next-line -->
 <YouTube id="pL3Yzjk5R4M" :width="560" :height="315" />
 
 I'm also a strong believer that the vast majority of people want to love their work.

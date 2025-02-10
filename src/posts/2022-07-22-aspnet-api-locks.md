@@ -16,6 +16,8 @@ categories:
 tags:
     - asp.net
     - production
+
+# cspell:ignore fstat, asax, proc, procdump, syncblk, clrstack
 ---
 
 # ASP.NET Lock Contention

@@ -15,6 +15,8 @@ categories:
 tags:
     - sre
     - planning
+
+# cspell:ignore Maslow
 ---
 
 # Inner-Loop Planning for SRE Teams
@@ -168,7 +170,7 @@ develop novel solutions to problems, be creative and investigate complex problem
 is the work that often is required to deliver large, complex, projects and it's the same work
 that we use to benchmark the seniority of our engineers.
 
-So with that in mind, surely the biggest hinderance to our engineers developing their critical
+So with that in mind, surely the biggest hindrance to our engineers developing their critical
 thinking skills and rapidly becoming more senior is that we've got systems which incentivize
 working on things at the other end of the spectrum?
 

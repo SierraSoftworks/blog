@@ -8,6 +8,8 @@ tags:
     - ops
 categories:
     - operations
+
+# cspell:ignore Traefik, swarmmode, localtest, vhosts, ehazlett
 ---
 
 # Traefik on Docker Swarm

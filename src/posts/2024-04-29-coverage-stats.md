@@ -47,7 +47,7 @@ public bool ShouldGoOutside(Time timeOfDay, Weather weather, Calendar schedule)
 ```
 
 If we write a test suite which validates that this method works correctly for for possible
-values of `timeOfDay` and `weather` but misses `schudule` we'll quickly find that the line
+values of `timeOfDay` and `weather` but misses `schedule` we'll quickly find that the line
 coverage for the first example will be either 0% or 100% (depending on whether the tooling
 you're using counts partial line coverage as covered or not).
 
@@ -90,7 +90,7 @@ In this case, we have only one statement and it is partially covered, so we can 
 
 If we instead write the same code in a much more verbose manner, we can leverage the
 statement-level coverage tracking provided by our code coverage tooling to better visualize
-what has beeen covered and what hasn't (highlighted lines have full coverage):
+what has been covered and what hasn't (highlighted lines have full coverage):
 
 ```csharp{3,5,8,10,18}
 public bool ShouldGoOutside(Time timeOfDay, Weather weather, Calendar schedule)

@@ -9,6 +9,8 @@ tags:
     - development
     - desktop
     - updates
+
+# cspell:ignore myapp, fatalf, infof
 ---
 
 # App Updates

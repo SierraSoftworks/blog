@@ -14,6 +14,8 @@ categories:
 tags:
     - prusa-xl
     - review
+
+# cspell:ignore Nextruders, firstlayer, layerlines, buildplate, qrqGMcbqetU
 ---
 
 # Prusa XL Review
@@ -90,7 +92,7 @@ Again, for many this won't be an issue - the enclosure will do a great job of pr
 ASA or PC-CF, you're likely to be fine. However, for someone like me who has made made a point of ensuring that I can
 print ABS with minimal VOC emissions, it's a sizeable gap in capabilities.
 
-Another letdown is the lack of software temperature control for the enclosure. The XL's logic board includes ports for
+Another let-down is the lack of software temperature control for the enclosure. The XL's logic board includes ports for
 additional thermal sensors and the Official Enclosure seems like the perfect place to leverage that capability for
 filaments which benefit from a certain ambient temperature (on my Voron a chamber thermistor allows me to automate pre-heating
 and ensure that ABS prints only start when the chamber reaches 45&deg;C). Instead, you're provided with a
@@ -136,11 +138,11 @@ travel. This is something many Voron users use, but the Prusa XL takes the proce
 of failure modes which are all too familiar to Voron users:
 
  - If the print head doesn't move a significant distance during the initial homing operation, the printer will attempt
-   to home on the opposite side of the axis, ensuring that false-positives caused by sticktion don't cause the printer
+   to home on the opposite side of the axis, ensuring that false-positives caused by stiction don't cause the printer
    to home incorrectly.
  - Once the printer has established a baseline zero, it will then perform a series of rapid validation movements testing
    the X and Y zero stops to ensure that they are correctly zeroed. On a Voron this isn't hugely necessary from a precision
-   perspective - so long as you're broadly in the right area nobody cares if you are 0.1mm off - but with a toolchanger
+   perspective - so long as you're broadly in the right area nobody cares if you are 0.1mm off - but with a tool-changer
    like the XL, this adds a level of accuracy and reliability.
 
 This kind of robust, well thought out, and well integrated experience extends to every aspect of using the printer.

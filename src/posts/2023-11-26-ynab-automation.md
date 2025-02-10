@@ -1,4 +1,6 @@
 ---
+# cspell:ignore ynab
+
 title: YNAB Automation
 description: |
     I've been using GitHub Actions to automate our household budgeting and investment tracking

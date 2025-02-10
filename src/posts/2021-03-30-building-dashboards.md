@@ -27,7 +27,7 @@ engineers to rapidly track down failures.
 <!-- more -->
 
 Since I've spent so much time complaining about dashboards in the wild and building
-my own to replace them, I figure it's probably time for me to distill my approach
+my own to replace them, I figure it's probably time for me to distil my approach
 into something that others can adopt. Consider this my first pass at explaining
 how I build dashboards and realize that it is a living document which will, no doubt,
 grow and evolve as I find better ways to articulate the process.
@@ -150,7 +150,7 @@ deliberately.
 ::: warning
 Remember that about 5% of the population has some degree of colour vision deficiency and,
 given various systemic issues in our industry, that figure rises to about 8% within computer
-engineering professions. That means you, statistically, have a coworker or friend who
+engineering professions. That means you, statistically, have a co-worker or friend who
 you should consider (and consult) when choosing colour palettes.
 
 **Some modern web browsers include colour vision deficiency emulation modes in their developer

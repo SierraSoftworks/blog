@@ -56,6 +56,7 @@ characters to represent vertical and horizontal pipes, however if we wanted to r
 corners we'd need to resort to using `7`, `L`, `J`, and maybe `F` characters to represent
 the four different corners. The results can be... difficult to read.
 
+<!-- cspell:disable -->
 ```ascii:no-line-numbers
  F----7F7F7F7F-7    
  |F--7||||||||FJ    
@@ -68,6 +69,7 @@ L--J L7   LJF7F-7L7
     FJL-7 || ||||   
     L---J LJ LJLJ   
 ```
+<!-- cspell:enable -->
 
 This is where Unicode box-drawing characters come in handy, because they allow us to
 use appropriate characters for these corners. For example, we could use the `┌`, `┐`,
@@ -180,6 +182,7 @@ impl std::fmt::Display for Schematic {
 We could even take this a step further and parse our original schematic from its ASCII
 representation using the tricks shown in [Type Converters in Rust][3] and then print it out using the box-drawing characters.
 
+<!-- cspell:disable -->
 ```rust
 impl FromStr for Schematic {
     type Err = String;
@@ -231,6 +234,7 @@ L--J L7   LJF7F-7L7
     println!("{}", schematic);
 }
 ```
+<!-- cspell:enable -->
 
 And wouldn't you know it, we get our lovely representation out the other side!
 

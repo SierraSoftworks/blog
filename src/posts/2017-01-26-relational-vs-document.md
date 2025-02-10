@@ -114,9 +114,9 @@ case you simply find Charles and the data is in his file.
 
 Now imagine the chaos you'd have if half of your grey cabinets were in another office and
 there were 100 people all trying to answer those questions. Even if you know which office
-has Charle's file, how could you possibly coordinate an efficient search for his address.
+has Charlie's file, how could you possibly coordinate an efficient search for his address.
 
-This is exactly the problem that document databasees solve so well.
+This is exactly the problem that document databases solve so well.
 
 ## Schema Ownership
 Schema ownership is one of the primary practical differences between document and
@@ -137,7 +137,7 @@ could provably guarantee the consistency of your data.
 > When using an RDBMS, you must embrace the concept that data is the most important part of your
 > stack and be prepared to have your application take second place.
 
-In this environment, RDBMSes excell. They provide designers and developers with a consistent
+In this environment, RDBMSes excel. They provide designers and developers with a consistent
 set of expectations and a known path from a full specification to a functional data layer.
 
 Where this approach doesn't work anywhere near as well is in an environment where your data
@@ -147,7 +147,7 @@ on the consumer to provide them with a complete, structured definition of the da
 be storing.
 
 ### The Document Paradigm
-Enter the document approach to data persistence. Certainly nothing new, it offers some intersting
+Enter the document approach to data persistence. Certainly nothing new, it offers some interesting
 properties not present in the relational model. Specifically, by treating data as a relatively
 dumb blob with a flexible structure you make it possible for many different models to be
 represented.
@@ -209,7 +209,7 @@ The first option and most general is to place the responsibility for associating
 data on the consumer. In this configuration, documents on the secondary (many) side
 of the relationship store the ID of the document on the primary (one) side of the
 relationship. As a consequence of the lack of relational constraints, this approach
-makes it possible to have documents which reference nonexistent entities, placing
+makes it possible to have documents which reference non-existent entities, placing
 an additional burden on the consumer.
 
 The alternative solution is to store all secondary-side data within an array-like data
@@ -276,11 +276,11 @@ but expect the ability to query or perform atomic changes, relational databases 
 costly solution.
 
 Let's take the example of a system which provides a general API through which data can be stored.
-Comsumers expect to be able to query that data based on a number of different fields, determined
+Consumers expect to be able to query that data based on a number of different fields, determined
 by them, as well as make changes to specific fields under the guarantee of atomicity.
 
-#### Design Excercise
-Let's run through a quick design excercise in which we build a feature-compatible set of implementations
+#### Design Exercise
+Let's run through a quick design exercise in which we build a feature-compatible set of implementations
 for unstructured (according to the implementation) data persistence on both document and relational
 databases.
 
@@ -402,6 +402,7 @@ document datastores.
 On the other hand, the relational implementation would require us to do
 something approximating the following:
 
+<!-- cspell:disable -->
 ```sql
 CREATE TABLE entry (
     ID int primary key auto_increment,
@@ -418,6 +419,7 @@ CREATE TABLE field (
     CONSTRAINT UQ_key UNIQUE (entry, key)
 )
 ```
+<!-- cspell:enable -->
 
 In this configuration, we have a one to many relationship between arbitrary `field`
 item and a corresponding `entry`.

@@ -7,6 +7,8 @@ tags:
   - github
   - bash
   - opensource
+
+# cspell:ignore compgen, CWORD, COMPREPLY
 ---
 
 # Autocompletion for Bash CLI
@@ -136,7 +138,7 @@ COMPREPLY=(
 )
 ```
 
-We set `$IFS` (the seperator characters) to be a newline and then use `printf`
+We set `$IFS` (the separator characters) to be a newline and then use `printf`
 to format our options with newline separators between each. This gets passed
 as the words list to `compgen` along with the current input and we let it handle
 the final filtering and formatting.
@@ -158,4 +160,5 @@ complete -F _bash_cli bash-cli
 Now that we've added the functionality, let's see a demo of how it works
 on the Bash CLI project's commands.
 
+<!-- cspell:disable-next-line -->
 <asciinema cast="b61d9hay2p1labwayfyg19aq6"/>

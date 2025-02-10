@@ -9,6 +9,7 @@ tags:
 categories:
 - web
 
+# cspell:ignore aurelia, Traefik
 ---
 
 # Dockerizing Aurelia
@@ -19,7 +20,7 @@ Aurelia's Logo
 
 [Aurelia](http://aurelia.io) is a modern web application framework in the spirit of [Angular](https://angularjs.org),
 with an exceptionally concise and accessible developer experience and
-standards compliant implementation. It is hands down my favorite web
+standards compliant implementation. It is hands down my favourite web
 framework right now and one I'd strongly recommend for most projects.
 
 One of Aurelia's greatest claims to fame is the incredible productivity

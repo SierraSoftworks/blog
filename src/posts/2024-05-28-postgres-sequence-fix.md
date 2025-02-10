@@ -13,6 +13,8 @@ categories:
 tags:
     - postgresql
     - sre
+
+# cspell:ignore setval, nextval, plpgsql
 ---
 
 # Fixing PostgreSQL Sequence Numbers

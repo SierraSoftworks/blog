@@ -42,7 +42,7 @@ This became WKD.
 ## Why should I choose WKD?
 If you are someone who regularly reads web comics, especially new ones you may find that you spend more time loading
 the next strip than reading it. In this case WKD may just be the right tool for you.
-It will allow you to download all your favorite web comics* to your hard drive for later reading.
+It will allow you to download all your favourite web comics* to your hard drive for later reading.
 
 ## What comics are supported by WKD?
 Technically almost any web comic that provides an image and a next button is supported. However currently only
@@ -91,5 +91,5 @@ web comics who's images are vastly smaller (10KB) you will see  as much as 75% w
 so just keep that in mind. (The biggest culprit so far is Chainsaw Suit)
 
 There is also a problem with certain pages in some comics, this results in the HTML library not replacing "&gt;" with ">"
-as it should. A temporary fix for this is to add an additional XPath query to your current one ( use "|" to seperate queries)
+as it should. A temporary fix for this is to add an additional XPath query to your current one ( use "|" to separate queries)
 which has "&amp;gt;" in the place of "&gt;". This should fix the problems for the time being.

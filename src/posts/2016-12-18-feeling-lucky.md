@@ -8,6 +8,7 @@ tags:
 categories:
 - development
 
+# cspell:ignore zadevelopers
 ---
 # Feeling Lucky
 
@@ -52,7 +53,7 @@ are making it possible to import absolutely massive quantities of code with almo
 no effort. When you combine this with our CDD libraries, it becomes almost a
 statistical impossibility that you cannot be successful.
 
-In addition to this, Chance Driven Development methodologies parallellise exceptionally,
+In addition to this, Chance Driven Development methodologies parallelise exceptionally,
 making them ever more attractive as the number of processor cores available to us
 increases.
 

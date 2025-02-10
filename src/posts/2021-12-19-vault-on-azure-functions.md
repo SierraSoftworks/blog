@@ -17,6 +17,8 @@ categories:
 tags:
     - hashicorp-vault
     - azure-functions
+
+# cspell:ignore AZUREKEYVAULT, CUSTOMHANDLER, mlock, addrs, Hightower
 ---
 
 # Hashicorp Vault on Azure Functions
@@ -72,8 +74,8 @@ setup and run Vault this way? Well, I've run a cluster of VMs to host Vault for 
 (including Consul for storage, and an NGINX reverse proxy for load balancing and fail-over) at
 a cost of about $90/month and about 2 days/month worth of maintenance, updates, troubleshooting etc.
 Hashicorp's own managed HCP Vault offering is available in a "developer" flavour for some $20/month,
-which is cheaper but doesn't offer fail-over or backups (yeesh). If you want backups and fail-over,
-you'll need to step up to their "Starter" plan at ~$340/month (YEESH!) which is a fair bit more than
+which is cheaper but doesn't offer fail-over or backups. If you want backups and fail-over,
+you'll need to step up to their "Starter" plan at ~$340/month which is a fair bit more than
 I'm willing to spend to support my ~~addiction~~ hobby.
 
 Contrast that with the $0.65 I've spent running Vault on Azure Functions for the last month, with
@@ -100,6 +102,7 @@ While it's now shown in the documentation, it is worth calling out that the Azur
 can be configured using environment variables, which we'll be using to simplify our configuration
 later.
 
+<!-- cspell:disable -->
 ```hcl
 storage "azure" {
     accountName = "my-storage-account"  # $AZURE_ACCOUNT_NAME
@@ -107,6 +110,7 @@ storage "azure" {
     container   = "container-efgh5678"  # $AZURE_BLOB_CONTAINER
 }
 ```
+<!-- cspell:enable -->
 
 ### Unsealing
 Whenever Vault is started, it needs to be unsealed. This process is usually conducted by an

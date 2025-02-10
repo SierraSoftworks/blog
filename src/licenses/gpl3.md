@@ -41,6 +41,7 @@ the content of the license itself and is not a substitute for understanding the 
 
 ## The License
 
+<!-- cspell:disable -->
 ```
  GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007

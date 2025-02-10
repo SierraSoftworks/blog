@@ -8,6 +8,8 @@ tags:
     - ops
 categories:
     - operations
+
+# cspell:ignore Traefik, Mesos
 ---
 
 # Docker Swarm
@@ -62,7 +64,7 @@ handling application crashes and monitoring the health of your services.
 ### Production Requirements
 
 1. Manage the lifecycle of applications, including restarting them following crashes.
-1. Provide application-level healthchecks to monitor service availability.
+1. Provide application-level health-checks to monitor service availability.
 1. Enable easy horizontal scaling of your applications behind a service abstraction.
 1. Expose tools to update your services with minimal, or no, downtime.
 1. Handle and recover from infrastructure failures automatically.
@@ -87,7 +89,7 @@ on which your services can communicate to performing rolling updates of those se
 If anything, this simplicity and ease of use - not to mention the ability to run an identical environment
 on your laptop with no extra work - is the primary reason one would choose Swarm over any of its competitors.
 
-Proceeding beyond the interface, Swarm's built in service discovery, IP-per-container, and native Healthcheck
+Proceeding beyond the interface, Swarm's built in service discovery, IP-per-container, and native health-check
 integration put it on-par with most other services for basic functionality needed in a production environment.
 
 ## Swarm's Disadvantages
@@ -134,7 +136,7 @@ reputation on it and neither should you.
 
 When you're working at that kind of scale, it's best to use tools built for the purpose and that's where
 products like [Kubernetes][kubernetes] really start to make a lot of sense. Features like built-in secrets
-management, automatic ingress configurations (setting up your loadbalancers) and comprehensive access control
+management, automatic ingress configurations (setting up your load-balancers) and comprehensive access control
 tools make them far better suited to those tasks than Swarm currently is.
 
 In addition to that, Swarm truly is a relatively new and unproven technology. If your job requires that the

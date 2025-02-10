@@ -20,6 +20,8 @@ tags:
     - leadership
     - management
     - team
+
+# cspell:ignore Cantrill
 ---
 
 # Be Right, Nicely

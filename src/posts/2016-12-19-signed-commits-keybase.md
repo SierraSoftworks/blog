@@ -9,6 +9,7 @@ tags:
 - development
 - security
 
+# cspell:ignore keybase, adduid, gpgsign, armored, armor
 ---
 # Signing Git Commits using KeyBase
 
@@ -107,6 +108,7 @@ machine. Unless you're on Windows, chances are you already have GPG installed
 on your machine. You can check by opening a terminal and running the `gpg`
 command. You should see something like the following...
 
+<!-- cspell:disable -->
 ```
 $ gpg --version
 gpg (GnuPG) 2.0.30 (Gpg4win 2.3.3)
@@ -126,6 +128,7 @@ Hash: MD5 (H1), SHA1 (H2), RIPEMD160 (H3), SHA256 (H8), SHA384 (H9),
       SHA512 (H10), SHA224 (H11)
 Compression: Uncompressed (Z0), ZIP (Z1), ZLIB (Z2), BZIP2 (Z3)
 ```
+<!-- cspell:enable -->
 
 If you are on Windows, you'll need to download and install the Gpg4Win tools,
 which you can grab [here][gpg4win].
@@ -151,6 +154,7 @@ gpg:                 imported: 1  (RSA: 1)
 
 At this point, you should be able to see the key in `gpg --list-keys`.
 
+<!-- cspell:disable -->
 ```sh
 $ gpg --list-keys
 gpg: using PGP trust model
@@ -161,6 +165,7 @@ uid       [ unknown] keybase.io/spartan563 <spartan563@keybase.io>
 sub   2048R/70D375E4 2015-04-08 [expires: 2023-04-06]
 sub   2048R/EA0B4FE2 2015-04-08 [expires: 2023-04-06]
 ```
+<!-- cspell:enable -->
 
 ### Adding Identities to your Keybase Key
 At this point, you've probably noticed that your Keybase key only
@@ -180,6 +185,7 @@ You'll be presented with a console in which you can make changes to your
 key by issuing commands. You'll want to use the `adduid` command to add
 a new user identity.
 
+<!-- cspell:disable -->
 ```sh
 gpg> adduid
 Real Name: Benjamin Pannell
@@ -190,6 +196,7 @@ You selected this USER-ID:
 
 Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?
 ```
+<!-- cspell:enable -->
 
 After filling in your details, you'll be prompted to make any fixes which
 are necessary and then enter `O` to finish the operation. It'll pop up

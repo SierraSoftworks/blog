@@ -5,6 +5,8 @@ permalinkPattern: :year/:month/:day/:slug/
 tags:
     - development
     - api
+
+# cspell:ignore Prolexic, zopfli, doglet, mycompany
 ---
 
 # Patterns for APIs
@@ -370,7 +372,7 @@ compression rates.
 
 While you're at it, take a look at Google's [zopfli][] which offers a gzip compatible format
 with even better compression ratios for standard web content and is widely supported by most
-common webservers.
+common web servers.
 
 :::: code-group
 ::: code-group-item gzip
@@ -583,10 +585,10 @@ of security to your users.
 The API gateway is capable of being reconfigured on the fly with new rules which allow you to route requests
 based on a number of different request parameters to different backends. This allows you to redirect requests
 for specific content, from a specific IP or with specific headers to specific servers. You also leverage a
-deployment platform which allows you to rapidly deploy new services and have a number of preconfigured microcaching
+deployment platform which allows you to rapidly deploy new services and have a number of preconfigured micro-caching
 services ready for deployment to provide load-mitigation for specific types of content.
 
-Once tha API gateway has determined that a requestor is authorized to make a specific request, it passes that
+Once tha API gateway has determined that a requester is authorized to make a specific request, it passes that
 request to one of a number of API providers which are responsible for converting a versioned API request into
 RPC calls to your internal services which actually perform the tasks and access the data. These API providers
 are responsible for request validation against well defined API schemas which are automatically built from your

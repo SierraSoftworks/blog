@@ -17,7 +17,7 @@ tags:
 
 # Technically Correct, but Universally Wrong
 The tech world is filled with people who have strong views and are more than happy to share them. An
-unreasonable number of them are priviledged white males. Many of them see the world through the lens
+unreasonable number of them are privileged white males. Many of them see the world through the lens
 of their own personal experience and don't bother much with external perspectives. Far too many are
 eager to start a fight over their religion of choice (be that a language, a technology, a "thought
 leader" whose message they subscribe to, or a topic they have precious little familiarity with).
@@ -40,7 +40,7 @@ some of it has been from people I know, and some of it has been in the form of s
 intended to "educate the masses about the real state of AI from someone with insider knowledge".
 
 The hallmark of these experiences, and I'm going to pick on the AI side to make a point, is that they
-utterly disregard the practical base rates and instead assume that the world is wholy defined by the
+utterly disregard the practical base rates and instead assume that the world is wholly defined by the
 contents of their echo chamber. Looking exclusively at these echo chambers, it's easy to imagine that
 these conclusions are correct; after all we have seen a stepwise increase in the number of AI search engines
 in the last few years, OpenAI saw some of the fastest customer growth of any startup ever, and NVIDIA
@@ -66,7 +66,7 @@ the line and regularly scheduled rolling blackouts are still a way of life in Af
 issues are not solved overnight, and in most cases they're shedding $<20\%$ of their total capacity. Game that out
 for a low-tens of percent increase in capacity and you're starting to see the issue...
 
-Of course, electricity generation isn't the only idea being peddled - because priviledged white males working in
+Of course, electricity generation isn't the only idea being peddled - because privileged white males working in
 tech cannot help but fall into the trap of assuming that 9 women can make a baby in 1 month. Of course, in this
 case the idea is that a billion chatbots will be able to produce enough AI research to result in a five order of
 magnitude improvement in AI performance within a decade - ignoring the fact that research, critically valuable as it
@@ -77,7 +77,7 @@ foundational models.
 
 That's not to say these aren't smart people, and it's not to say that this is a problem limited to the AI sphere either,
 it's a problem induced by a lack of perspective and a bias for seeking out supporting viewpoints to justify our
-assumptions. It's the reason diverse teams consistently outperform heterogenous groups; it's the reason I get so excited
+assumptions. It's the reason diverse teams consistently outperform heterogeneous groups; it's the reason I get so excited
 when people on my team share ideas that directly contradict my own (and doubly so when they're proven right)!
 
 Another area I see the same patterns playing out is in the software engineering realm, where it is common to hear
@@ -108,6 +108,6 @@ people from different backgrounds, fields, genders, and demographics - learn to 
 and try to avoid letting yourself fall into the trap of thinking there is ever a simple answer to a system dynamics
 problem. Go and read books, especially those that make you feel uncomfortable or force you to confront your
 humanity. Whatever you do; don't make the mistake of assuming  that just because everyone is allowed to have an
-oppinion they are all equally valid: think for yourself and challenge the status quo (especially when you can make
+opinion they are all equally valid: think for yourself and challenge the status quo (especially when you can make
 it better for others less fortunate). That's more than one thing... so know when to break the rules.
 :::

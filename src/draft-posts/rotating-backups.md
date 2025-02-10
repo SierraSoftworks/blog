@@ -179,7 +179,7 @@ you have an excellent understanding of the business logic responsible for, and d
 the data you are restoring. Document your reconciliation algorithm and verify that it
 behaves correctly on sample datasets and by consulting with your subject matter experts.
 
-Once you are confident that you have a reconciliation algorithm that safely recombinates
+Once you are confident that you have a reconciliation algorithm that safely recombines
 your data, you can go about restoring your partial backups onto the existing state.
 
 ##### A note on incremental backups

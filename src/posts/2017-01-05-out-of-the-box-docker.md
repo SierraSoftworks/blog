@@ -76,7 +76,7 @@ to run a task organized and accessible.
 One of the best uses for this approach has been the encapsulation of automation
 workflows in Docker containers.
 
-We primarily use [Ansible](https://www.ansible.com/) as our outomation orchestrator of choice, so packaging
+We primarily use [Ansible](https://www.ansible.com/) as our automation orchestrator of choice, so packaging
 [Ansible](https://www.ansible.com/) and the relevant playbooks into a Docker container presents an elegantly
 simple, accessible and reliable way to execute our playbooks from anywhere.
 

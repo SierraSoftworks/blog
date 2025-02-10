@@ -10,10 +10,12 @@ tags:
     - web
 categories:
     - web
+
+# cspell:ignore Livefyre, Joomla, mywebsite
 ---
 
 # Do you need a dynamic website?
-Static websites are synonomous with the dawn of the internet, before database servers became mainstream, before the advent of the CMS and long before the
+Static websites are synonymous with the dawn of the internet, before database servers became mainstream, before the advent of the CMS and long before the
 dawn of the web application. Over the years we've seen the advent of web development frameworks like Ruby on Rails, Express.js and MVC to name but a few.
 These frameworks include support for advanced templating engines, database backed page generation and custom routing, but is it really necessary to use
 such a framework when a static website might address all the same problems at a fraction of the cost.
@@ -27,15 +29,15 @@ the ability to perform server side operations based on user input, this can incl
 sources like databases or other web services and authenticating your users with a custom login page.
 
 With the advent of document stores like MongoDB, scaling dynamic web applications - and reducing their response times - has become easier than ever before,
-and the ability to reduce server load using tools like Memcached or microcaching has meant that generally slow web applications are now able to respond
-to te majority of their requests in times rivaling that of static content.
+and the ability to reduce server load using tools like Memcached or micro-caching has meant that generally slow web applications are now able to respond
+to te majority of their requests in times rivalling that of static content.
 
 So, with all of these advantages, why would you consider hosting a static website instead? The very simple answer is performance. More specifically,
 using a modern webserver like NGINX you can reliably expect to quadruple your possible throughput when compared to an optimized web application,
 against an unoptimized web application it isn't even a contest - with over a 400x increase in possible throughput single digit millisecond server response times.
 
 ## Static Website Performance
-As I've mentioned, the performance of a static website far eclipses that of its dynamic bretheren. The reason is quite simple, where a dynamic website
+As I've mentioned, the performance of a static website far eclipses that of its dynamic brethren. The reason is quite simple, where a dynamic website
 generally requires database queries to be completed, results processed and templates rendered before a request can be served - a static website simply
 requires the request to be processed by your web server (generally in the millisecond range), at which point the request can be immediately served.
 This allows a static site to respond faster to requests, serve more requests in parallel, and put less strain on your server while doing so. These
@@ -44,7 +46,7 @@ needing to hit the database and page renderer - effectively acting as static web
 
 The problem is that implementing an effective caching solution is challenging, especially for dynamic websites where the webserver is unable to
 determine whether or not the content has changed except by rendering the latest content. A common alternative is to make use of what has been
-termed "microcaching", the process of caching your website's pages for a very small duration (1 - 15 seconds), which allows relatively recent
+termed "micro-caching", the process of caching your website's pages for a very small duration (1 - 15 seconds), which allows relatively recent
 content to be served from the cache while reducing the number of requests that need to be rendered against the database.
 
 ## Static Website Creation
