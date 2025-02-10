@@ -11,7 +11,7 @@
   "scripts": {
     "dev": "vuepress dev src",
     "build": "vuepress build src --dest dist",
-    "test": "markdownlint-cli2 '**/*.md' '#node_modules'"
+    "lint": "markdownlint-cli2 '**/*.md' '#node_modules'"
   },
   "license": "MIT",
   "devDependencies": {
