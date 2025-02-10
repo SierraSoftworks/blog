@@ -92,8 +92,8 @@ in your comments here tends to work best.
 
 #### Example Comment
 > Based on what I can see in our config (link) this should read "a timeout of 2000ms" instead of the "500ms" you have here.
-> 
-> &mdash; Example Commenter
+>
+> &nbsp;&nbsp;&mdash; Example Commenter
 
 ### Subjectively Incorrect
 In most cases, we aren't blessed with the benefit of objectively incorrect statements since

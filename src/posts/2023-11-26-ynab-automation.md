@@ -33,6 +33,7 @@ transactions with a partner for household budgeting purposes. All of these are t
 in Europe, with a partner and international investments, I really can't live without.
 
 In an ideal world, this would let me do things like:
+
  - Specify the number of shares of a given stock I hold, and have YNAB automatically reflect daily changes in
    the value of those shares under a "Tracked" account.
  - Automatically convert transactions in a foreign currency to my local currency, and have YNAB reflect the

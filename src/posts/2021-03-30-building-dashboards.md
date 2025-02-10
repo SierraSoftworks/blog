@@ -38,19 +38,18 @@ fundamental building blocks which have informed by approach. Without these, you
 will likely end up with dashboards which, while informative, don't truly help
 engineers understand the system or how to resolve problems with it.
 
-
 ### Service Level Indicators
 SLIs are the numeric, measurable, representations of your service's delivery on
 stakeholder asks. Put another way, they provide you with a means to quantify how
 well your service is completing its fundamental mission.
 
 If that doesn't make sense, then ask yourself this: "Why did `$stakeholder` ask me
-to build this service?". The answer to that question, when you find a measurable 
+to build this service?". The answer to that question, when you find a measurable
 numeric representation of it, is your SLI.
 
 Your service might have more than one SLI, but fundamentally they should be
 representations of how satisfied your stakeholders are with the service. Many
-teams get distracted by what others have used: measurements like 
+teams get distracted by what others have used: measurements like
 latency, availability, and bounce rate. These measurements might be valuable for
 you too, but you should decide that based on what your stakeholders have told you,
 rather than because someone else used them.
@@ -119,7 +118,7 @@ here. To be explicit about it, the trade off is between granularity and breadth 
 
 To mitigate this, we can focus on measuring the inputs and outputs of the portion of the
 system that the dashboard is representing. By focusing on these top-level inputs and outputs,
-we avoid falling into the trap of trading coverage for granularity. 
+we avoid falling into the trap of trading coverage for granularity.
 
 ::: tip
 It is uniformly better to know where the problem is and need to go to another dashboard

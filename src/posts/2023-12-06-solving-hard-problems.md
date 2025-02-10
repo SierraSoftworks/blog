@@ -138,7 +138,7 @@ are not only more likely to arise, but are also harder to deal with.
 > If I don't even know what I'm supposed to do, how can I possibly give an estimate
 > for when it'll be done?!
 >
->   &mdash; Every engineer during sprint planning
+> &nbsp;&nbsp;&mdash; Every engineer during sprint planning
 
 In many cases the solution to ambiguity is gathering more information, usually by
 talking with people, but knowing how much information you need to gather before
@@ -218,7 +218,9 @@ going to want to setup for your development workflow.
 
 With these in place, your development loop should roughly look something like this:
 
-```mermaid: A circular diagram showing how one writes a piece of code, runs into a problem, writes a test to reproduce the problem, fixes the problem, and then repeats the process.
+```mermaid
+# A circular diagram showing how one writes a piece of code, runs into a problem,
+# writes a test to reproduce the problem, fixes the problem, and then repeats the process.
 
 graph LR;
     A[Write some code] --> B[Run into a problem];

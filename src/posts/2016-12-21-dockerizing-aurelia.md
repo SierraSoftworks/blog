@@ -94,7 +94,7 @@ With that as our `Dockerfile`, we should now be able to build the image by using
 the `docker build` command.
 
 ```sh
-$ docker build -t sierrasoftworks/aurelia-demo:latest .
+docker build -t sierrasoftworks/aurelia-demo:latest .
 ```
 
 ## Deploying your Docker Image
@@ -107,7 +107,7 @@ To push your image to the Docker Hub, just run `docker push` and provide the nam
 built image\[^1\].
 
 ```sh
-$ docker push sierrasoftworks/aurelia-demo:latest
+docker push sierrasoftworks/aurelia-demo:latest
 ```
 
 Assuming that all completes successfully, you'll now be able to deploy your application to
@@ -116,7 +116,7 @@ any Docker host which can access that registry.
 To deploy your container, let's quickly run the following...
 
 ```sh
-$ docker run -d --rm -p 80:80 --name aurelia-demo sierrasoftworks/aurelia-demo:latest
+docker run -d --rm -p 80:80 --name aurelia-demo sierrasoftworks/aurelia-demo:latest
 ```
 
 If you visit [http://localhost:80/](http://localhost:80/) you should now see your web application. Great stuff right?

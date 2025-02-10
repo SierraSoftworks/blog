@@ -35,32 +35,40 @@ parameters. My personal favourite is to simply include the API version in the UR
 
 :::: code-group
 ::: code-group-item path
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: api.mycompany.com
 ```
+
 :::
 
 ::: code-group-item query
+
 ```http
 GET /api/users?api-version=1.x HTTP/1.1
 Host: api.mycompany.com
 ```
+
 :::
 
 ::: code-group-item host
+
 ```http
 GET /api/users HTTP/1.1
 Host: api-v1.mycompany.com
 ```
+
 :::
 
 ::: code-group-item headers
+
 ```http
 GET /api/users HTTP/1.1
 API-Version: 1.x
 Host: api.mycompany.com
 ```
+
 :::
 ::::
 
@@ -75,6 +83,7 @@ particularly helpful to prefix your various API methods with the `/api/` path co
 
 :::: code-group
 ::: code-group-item api
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -90,9 +99,11 @@ Content-Type: application/json
     }
 ]
 ```
+
 :::
 
 ::: code-group-item ui
+
 ```http
 GET /users HTTP/1.1
 Host: app.mycompany.com
@@ -105,6 +116,7 @@ Content-Type: text/html
     ...
 </html>
 ```
+
 :::
 ::::
 
@@ -118,13 +130,16 @@ are likely to be with your API. **Don't make your users' lives difficult.**
 
 :::: code-group
 ::: code-group-item list
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
 ```
+
 :::
 
 ::: code-group-item create
+
 ```http
 POST /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -135,9 +150,11 @@ Content-Type: application/json
     "pet": "Charlie"
 }
 ```
+
 :::
 
 ::: code-group-item replace
+
 ```http
 PUT /api/v1/user/1 HTTP/1.1
 Host: app.mycompany.com
@@ -148,10 +165,11 @@ Content-Type: application/json
     "pet": "Doglet"
 }
 ```
+
 :::
 
-
 ::: code-group-item modify
+
 ```http
 PATCH /api/v1/user/1 HTTP/1.1
 Host: app.mycompany.com
@@ -161,15 +179,16 @@ Content-Type: application/json
     "pet": "Doglet"
 }
 ```
+
 :::
 
-
-
 ::: code-group-item remove
+
 ```http
 DELETE /api/v1/user/1 HTTP/1.1
 Host: app.mycompany.com
 ```
+
 :::
 ::::
 
@@ -188,7 +207,7 @@ to use them.
 | `204 No Content` | Used to indicate that a request completed successfully but that no content will be returned by the server. |
 | `301 Moved Permanently` | Indicates that the entity you are requesting has been permanently moved to a different URL specified in the `Location` header. |
 | `302 Found` | Indicates that the entity you are requesting can be found at the location specified in the `Location` header. |
-| `400 Bad Request` | Indicates that the server could not process the request due to an error the client has made. This could be invalid syntax, missing fields, the wrong data etc. |
+| `400 Bad Request` | Indicates that the server could not process the request due to an error the client has made. |
 | `401 Unauthorized` | Used when a client has not provided (valid) credentials to access the current resource. |
 | `403 Forbidden` | Used when a client tries to access a resource for which their credentials do not have access. |
 | `404 Not Found` | Indicates that the server could not find the entity requested by the client at the given URL. |
@@ -208,6 +227,7 @@ while to fetch a single user you would use the `/api/v1/user/{id}` route.
 
 :::: code-group
 ::: code-group-item plural
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -223,9 +243,11 @@ Content-Type: application/json
     }
 ]
 ```
+
 :::
 
 ::: code-group-item singular
+
 ```http
 GET /api/v1/user/1 HTTP/1.1
 Host: app.mycompany.com
@@ -239,6 +261,7 @@ Content-Type: application/json
     "name": "Bob"
 }
 ```
+
 :::
 ::::
 
@@ -251,6 +274,7 @@ work that consumers need to perform when interacting with your service.
 
 :::: code-group
 ::: code-group-item json
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -266,10 +290,11 @@ Content-Type: application/json
     }
 ]
 ```
+
 :::
 
-
 ::: code-group-item html
+
 ```http
 GET /users HTTP/1.1
 Host: app.mycompany.com
@@ -282,6 +307,7 @@ Content-Type: text/html
     ...
 </html>
 ```
+
 :::
 ::::
 
@@ -292,9 +318,9 @@ operations engineers who need to quickly verify the state of your service in the
 or in situations where your clients are able to leverage advanced (or horrible) encoding
 schemes like ProtoBuf, MsgPack, XML+SOAP[^1] etc.
 
-
 :::: code-group
 ::: code-group-item json
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -310,9 +336,11 @@ Content-Type: application/json
     }
 ]
 ```
+
 :::
 
 ::: code-group-item html
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -326,6 +354,7 @@ Content-Type: text/html
     ...
 </html>
 ```
+
 :::
 ::::
 
@@ -345,6 +374,7 @@ common webservers.
 
 :::: code-group
 ::: code-group-item gzip
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -357,6 +387,7 @@ Content-Encoding: gzip
 
 ...
 ```
+
 :::
 ::::
 
@@ -389,13 +420,16 @@ it from the creation pattern.
 
 :::: code-group
 ::: code-group-item query
+
 ```http
 GET /api/v1/users?name=Bob HTTP/1.1
 Host: app.mycompany.com
 ```
+
 :::
 
 ::: code-group-item get body
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -405,9 +439,11 @@ Content-Type: application/json
     "name": "Bob"
 }
 ```
+
 :::
 
 ::: code-group-item post
+
 ```http
 POST /api/v1/users/search HTTP/1.1
 Host: app.mycompany.com
@@ -417,6 +453,7 @@ Content-Type: application/json
     "name": "Bob"
 }
 ```
+
 :::
 ::::
 
@@ -444,6 +481,7 @@ Of course, once the rate limit is hit, you should return an `429 Too Many Reques
 
 :::: code-group
 ::: code-group-item normal
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -454,9 +492,11 @@ API-Bucket-Rate: 10
 
 []
 ```
+
 :::
 
 ::: code-group-item limited
+
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
@@ -465,6 +505,7 @@ HTTP/1.1 429 Too Many Requests
 API-Bucket-Remaining: 0
 API-Bucket-Rate: 10
 ```
+
 :::
 ::::
 
@@ -586,5 +627,5 @@ and which should be avoided.
 *[VPC]: Virtual Private Cloud
 
 [^1]: Figuring out which of these is an advanced encoding scheme and which is a horrible one is left as an exercise for the reader.
-[^2]: http://www.netresec.com/?page=Blog&month=2015-03&post=China%27s-Man-on-the-Side-Attack-on-GitHub
-[^3]: https://www.nginx.com/blog/benefits-of-microcaching-nginx/
+[^2]: [Learn more about Man-on-the-Side attacks](http://www.netresec.com/?page=Blog&month=2015-03&post=China%27s-Man-on-the-Side-Attack-on-GitHub)
+[^3]: [Learn more about micro-caching](https://www.nginx.com/blog/benefits-of-microcaching-nginx/)

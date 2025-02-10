@@ -84,6 +84,7 @@ In our particular case, we've wrapped our playbooks using files like the followi
 
 :::: code-group
 ::: code-group-item Dockerfile
+
 ```dockerfile
 FROM sierrasoftworks/docker-ansible
 ENV ANSIBLE_HOST_KEY_CHECKING=False
@@ -92,9 +93,11 @@ ADD ./ /ansible
 ENTRYPOINT ["/ansible/run"]
 CMD []
 ```
+
 :::
 
 ::: code-group-item bash
+
 ```bash
 #!/bin/sh
 HOST_SPEC="$*"
@@ -140,6 +143,7 @@ ansible-playbook -i "$HOST," \
     playbook.yml
 fi
 ```
+
 :::
 ::::
 

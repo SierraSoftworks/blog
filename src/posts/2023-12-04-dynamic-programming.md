@@ -103,7 +103,7 @@ graph LR
 
     fib_3["fib(3) x5"] --> fib_2
     fib_3 --> fib_1
-    
+
     fib_2["fib(2) x8"] --> fib_1["fib(1) x13"]
     fib_2 --> fib_0["fib(0) x8"]
 ```

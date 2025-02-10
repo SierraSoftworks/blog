@@ -24,7 +24,7 @@ service principal credentials into your GitHub Actions Secrets to let you
 do so. The birds are signing, the sun is shining, an hackers are hacking your
 code coverage service...
 
-How confident are you that your service principal credentials aren't 
+How confident are you that your service principal credentials aren't
 compromised? If you're like me, that number goes to zero very, very quickly.
 Rotating them for hundreds of repositories and service principals is far from
 a simple task, and I hate having to do complex work - so let's look at a better
@@ -54,8 +54,8 @@ accessible over the public internet so that GitHub Actions can talk to it. Make
 sure that you're running Vault with TLS enabled, or a trusted TLS reverse proxy
 in front of it.
 
-You'll then want to have the Vault CLI installed on your machine and 
-authenticated with a token that allows you to create and manage both 
+You'll then want to have the Vault CLI installed on your machine and
+authenticated with a token that allows you to create and manage both
 authentication methods and policies (for what we're going to be doing).
 
 ## Auth Backend
@@ -84,7 +84,6 @@ Okay, so now that we've created and configured the auth backend, we should
 be able to validate a token issued by GitHub Actions, however we don't yet
 have any roles associated with these tokens and so we won't (yet) be able
 to use it within Vault.
-
 
 ## Roles
 Roles are Vault's way of associating a given access token with one or more
@@ -127,6 +126,7 @@ that a leaked token from another service is re-used to access Vault.
 :::: code-group
 
 ::: code-group-item Pull Requests
+
 ```json{13-16,29}
 {
     "role_type": "jwt",
@@ -160,9 +160,11 @@ that a leaked token from another service is re-used to access Vault.
     ]
 }
 ```
+
 :::
 
 ::: code-group-item Builds
+
 ```json{13-15,28}
 {
     "role_type": "jwt",
@@ -195,9 +197,11 @@ that a leaked token from another service is re-used to access Vault.
     ]
 }
 ```
+
 :::
 
 ::: code-group-item Deployments
+
 ```json{13-14,22,28}
 {
     "role_type": "jwt",
@@ -230,6 +234,7 @@ that a leaked token from another service is re-used to access Vault.
     ]
 }
 ```
+
 :::
 
 ::::
@@ -257,7 +262,7 @@ EOF
 Now that we've got some roles in place, we need to decide what they're able to
 access. This is controlled through Vault's
 [policies](https://www.vaultproject.io/docs/concepts/policy.html). We are going
-to create one policy for each role and use templated policies to give each 
+to create one policy for each role and use templated policies to give each
 repository access to its own namespaced secrets.
 
 Before we get started, we're going to need to figure out what the "mount point"
@@ -278,18 +283,18 @@ using a folder structure which looks like the following:
 
 <FileTree>
 
-- repos/
+ - repos/
    - SierraSoftworks/
      - example/
        - build_secret1 🔒
        - build_secret2 🔒
        - public/
-          - pr_secret1 🔒
-          - pr_secret2 🔒
+         - pr_secret1 🔒
+         - pr_secret2 🔒
        - deploy/
          - Production/
-            - deploy_secret1 🔒
-            - deploy_secret2 🔒
+           - deploy_secret1 🔒
+           - deploy_secret2 🔒
 </FileTree>
 
 Pull Request builds should only be able to access secrets within the `public/`
@@ -300,48 +305,54 @@ corresponding environment's directory within `deploy/`.
 :::: code-group
 
 ::: code-group-item Pull Requests
+
 ```hcl
 # role: github-actions-pr
 # description: Allow Pull Request builds to access their repository's "public" secrets
 
 path "secrets/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/public/*" {
- 	capabilities = ["read"] 
+  capabilities = ["read"]
 }
 ```
+
 :::
 
 ::: code-group-item Builds
+
 ```hcl
 # role: github-actions-build
 # description: Allow official builds to access everything except deployment secrets
 
 path "secrets/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/*" {
- 	capabilities = ["read"] 
+  capabilities = ["read"]
 }
 
 path "secrets/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/deploy/*" {
- 	capabilities = ["deny"] 
+  capabilities = ["deny"]
 }
 ```
+
 :::
 
 ::: code-group-item Deployments
+
 ```hcl
 # role: github-actions-deploy
 # description: Allow official builds to access everything except deployment secrets
 
 path "secrets/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/*" {
- 	capabilities = ["read"] 
+  capabilities = ["read"]
 }
 
 path "secrets/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/deploy/*" {
- 	capabilities = ["deny"] 
+  capabilities = ["deny"]
 }
 
 path "secret/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/deploy/{{identity.entity.aliases.auth_oidc_012345678.metadata.environment}}/*" {
- 	capabilities = ["read"] 
+  capabilities = ["read"]
 }
 ```
+
 :::
 
 ::::
@@ -410,7 +421,7 @@ jobs:
         run: |
             curl -sSL -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=$VAULT_AUDIENCE" | \
             jq "{ jwt: .value, role: \"$VAULT_ROLE\" }" > ./token.json
-            
+
             echo 'GitHub Actions Token Claims'
             cat ./token.json | jq -r '.jwt | split(".") | .[1] | @base64d' | jq
 

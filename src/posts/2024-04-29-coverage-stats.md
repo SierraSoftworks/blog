@@ -117,7 +117,6 @@ public bool ShouldGoOutside(Time timeOfDay, Weather weather, Calendar schedule)
 When the compiler generates the corresponding AST (with coverage annotations) for this code,
 we find something like the following:
 
-
 ```mermaid A diagram showing the AST for the verbose version of the ShouldGoOutside method.
 flowchart LR
     classDef covered stroke:#2a2,stroke-width:3px;
@@ -141,7 +140,7 @@ flowchart LR
         If2[IF]:::covered
         If2 --> IsSunny["weather.IsSunny()"]:::covered
     end
-    
+
     Line8 --> Return2
     subgraph Line10
         Return2[Return]:::covered

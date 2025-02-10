@@ -12,24 +12,24 @@ title = "Backups and Google Cloud Storage"
 
 ## Creating a Cloud Storage Bucket
 
-* How to create the bucket
-* What permissions to set
+ - How to create the bucket
+ - What permissions to set
 
 ## Configuring Access to your Bucket
 
-* Enabling interoperability support
-* Accessing your bucket via `s3`
+ - Enabling interoperability support
+ - Accessing your bucket via `s3`
 
 ## Configuring your Backup Task
 
-* The `s3` compatible endpoint
+ - The `s3` compatible endpoint
 
 ## Configuring your Bucket Policies
 
-* Content expiration and cold-storage rules
-* Access permissions
+ - Content expiration and cold-storage rules
+ - Access permissions
 
-# Migrating Old Backups
+## Migrating Old Backups
 
-* Using the transfer tool
-* Using the `mc`
+ - Using the transfer tool
+ - Using the `mc`

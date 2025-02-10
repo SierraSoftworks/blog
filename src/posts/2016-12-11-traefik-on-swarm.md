@@ -29,7 +29,7 @@ time on your [SLA budget](https://landing.google.com/sre/interview/ben-treynor.h
 
 In addition to this: Traefik includes support for HTTP/2.0 out of the box, something I'm
 still waiting for HAProxy to support, and [ACME][acme] support (which means LetsEncrypt without
-any effort). 
+any effort).
 
 ## Setting up your Swarm
 First thing's first, we'll need to setup your Docker host to be running in Swarm mode.
@@ -65,6 +65,7 @@ dashboard respectively.
 
 :::: code-group
 ::: code-group-item PowerShell
+
 ```powershell
 docker service create --name traefik `
     --network http `
@@ -78,9 +79,11 @@ docker service create --name traefik `
         --docker.watch `
         --docker.domain=localhost
 ```
+
 :::
 
 ::: code-group-item Bash
+
 ```bash
 docker service create --name traefik \
     --network http \
@@ -94,6 +97,7 @@ docker service create --name traefik \
         --docker.watch \
         --docker.domain=localtest.me
 ```
+
 :::
 ::::
 
@@ -112,21 +116,25 @@ excellent `ehazlett/docker-demo` container, which is perfect for this purpose.
 
 :::: code-group
 ::: code-group-item PowerShell
+
 ```powershell
 docker service create --name demo `
     --network http `
     --label "traefik.port=8080" `
     ehazlett/docker-demo
 ```
+
 :::
 
 ::: code-group-item Bash
+
 ```bash
 docker service create --name demo \
     --network http \
     --label "traefik.port=8080" \
     ehazlett/docker-demo
 ```
+
 :::
 ::::
 

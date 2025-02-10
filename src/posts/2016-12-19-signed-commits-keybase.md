@@ -28,7 +28,7 @@ The simple fact is that by adopting code someone else has written, you are
 entrusting your clients' security to them - you best be certain that trust
 is wisely placed.
 
-Using Git's built in support for [PGP][pgp] signing and pairing it with 
+Using Git's built in support for [PGP][pgp] signing and pairing it with
 [Keybase][keybase] provides you with a great framework on which to build and
 verify that trust. In this post I'll go over how one sets up their development
 environment to support this workflow.
@@ -63,11 +63,10 @@ help prevent it.
 
 Besides, you'll get a cool badge on GitHub...
 
-<Figure src="https://cdn.sierrasoftworks.com/blog/github_signed_commit.PNG" 
+<Figure src="https://cdn.sierrasoftworks.com/blog/github_signed_commit.PNG"
   alt="A screenshot showing the green checkmark that GitHub uses to indicate that a commit has been signed with a verified GPG key.">
 GitHub's Signed Commit Indicator
 </Figure>
-
 
 ## What is Keybase
 This brings us to the topic of publicly verifiable and auditable identities.
@@ -97,7 +96,6 @@ regarding whether you trust them or not.
 By using Keybase, you make it very easy for your audience to quickly verify that
 you're who you claim to be and that you're the kind of person worthy of their
 trust.
-
 
 ## How do I setup it up?
 This is where things start getting interesting, it's actually rather straightforward
@@ -146,6 +144,9 @@ following command.
 
 ```sh
 $ gpg --import keybase.gpg
+gpg: your name [ID]: public key [Name, e-mail] was imported
+gpg: Total number of treated keys: 1
+gpg:                 imported: 1  (RSA: 1)
 ```
 
 At this point, you should be able to see the key in `gpg --list-keys`.
@@ -172,6 +173,7 @@ key through the `gpg` tool.
 
 ```sh
 $ gpg --edit-key $user@keybase.io
+gpg>
 ```
 
 You'll be presented with a console in which you can make changes to your
@@ -182,7 +184,7 @@ a new user identity.
 gpg> adduid
 Real Name: Benjamin Pannell
 Email address: admin@sierrasoftworks.com
-Comment: 
+Comment:
 You selected this USER-ID:
   "Benjamin Pannell <admin@sierrasoftworks.com>"
 
@@ -206,8 +208,8 @@ Git user is configured correctly. Make sure you use a name and email which
 match one of your identities.
 
 ```sh
-$ git config --global user.name "Benjamin Pannell"
-$ git config --global user.email "admin@sierrasoftworks.com"
+git config --global user.name "Benjamin Pannell"
+git config --global user.email "admin@sierrasoftworks.com"
 ```
 
 Once that's done, tell Git to sign your commits by default. This isn't strictly
@@ -216,7 +218,7 @@ auditable commit trail and allow you to quickly spot something which is out of
 place.
 
 ```sh
-$ git config --global commit.gpgsign true
+git config --global commit.gpgsign true
 ```
 
 #### Windows Configuration
@@ -227,7 +229,7 @@ to request your password...
 To fix this, you'll need to point Git to the right `gpg.exe` file.
 
 ```sh
-$ git config --global gpg.program "C:\Program Files (x86)\GNU\GnuPG\gpg2.exe"
+git config --global gpg.program "C:\Program Files (x86)\GNU\GnuPG\gpg2.exe"
 ```
 
 ### GitHub
@@ -245,15 +247,19 @@ and paste the armored data in GitHub.
 
 :::: code-group
 ::: code-group-item Powershell
+
 ```powershell
 gpg --armor --export $user@keybase.io | clip
 ```
+
 :::
 
 ::: code-group-item Bash
+
 ```bash
-$ gpg --armor --export $user@keybase.io
+gpg --armor --export $user@keybase.io
 ```
+
 :::
 ::::
 

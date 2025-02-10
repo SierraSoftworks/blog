@@ -16,10 +16,10 @@ for shipping those backups off to S3 (or an S3 compatible service like [Minio][]
 
 ## Features
 
-- Fully containerized with an environment-variable based API for easy use with Kubernetes.
-- Full support for streaming backups to S3 compatible storage systems.
-- Stores backups using the current date in a format which allows for easy scheduled rotation.
-- Simple and easy to audit or extend.
+ - Fully containerized with an environment-variable based API for easy use with Kubernetes.
+ - Full support for streaming backups to S3 compatible storage systems.
+ - Stores backups using the current date in a format which allows for easy scheduled rotation.
+ - Simple and easy to audit or extend.
 
 ## Supported Databases
 We have created versions of Minback with support for the following databases. You will find their
@@ -88,7 +88,6 @@ MINIO_BUCKET=backups
 ::: tip
 For more information or to report an issue, you can view this project on [GitHub](https://github.com/SierraSoftworks/minback-postgres).
 :::
-
 
 #### Configuration
 This container is configured using environment variables, enabling it to easily be started
@@ -167,6 +166,7 @@ of removing older backups is referred to as "backup rotation" and Minback provid
 assist with this.
 
 ### Usage
+
 ```
 USAGE:
    minback-cleanup cleanup [command options] [arguments...]
@@ -182,6 +182,7 @@ OPTIONS:
 
 ### Keep Specifications
 A keep specification is composed of three different properties:
+
 1. **Window** (`@`) tells us when this window starts to apply from. It defaults to "right now" and can be
    extended out with a time duration, for example `52w` tells us that the window starts at 1 year and
    continues into the past from there.
@@ -204,6 +205,7 @@ You define a keep specification by concatenating each property's control charact
 them in any order you wish.
 
 ::: tip
+
 #### `@2w/1d~6h`
 In this example, let's assume we create a new backup every 6 hours but only want to store one backup per day
 for everything older than 2 weeks (i.e. your 6 hour frequency is for short-term recovery).
@@ -214,8 +216,8 @@ for everything older than 2 weeks (i.e. your 6 hour frequency is for short-term 
    based on their timestamp and only those which match (after smudging) the day boundary will be kept.
 3. **Smudge Factor** is 6 hours (`6h`) which ensures that backups which occur up to 3 hours either side of the
    day boundary (midnight) will be kept.
-:::
 
+:::
 
 ### Example
 In this example, let's assume we have a very aggressive backup schedule that
@@ -245,21 +247,6 @@ MINIO_ACCESS_KEY=minio
 MINIO_SECRET_KEY=miniosecret
 MINIO_BUCKET=backups
 ```
-
-### Configuration
-You can configure command line options using environment variables if you wish.
-
-#### `MINIO_SERVER=https://play.minio.io`
-The Minio server you wish to send backups to.
-
-#### `MINIO_ACCESS_KEY=minio`
-The Access Key used to connect to your Minio server.
-
-#### `MINIO_SECRET_KEY=miniosecret`
-The Secret Key used to connect to your Minio server.
-
-#### `MINIO_BUCKET=backups`
-The Minio bucket you wish to store your backup in.
 
 [Minio]: https://min.io
 [Kubernetes CronJob]: https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/

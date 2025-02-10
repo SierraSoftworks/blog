@@ -362,7 +362,8 @@ isolation.
 
 While many languages have support for some form of iterator/generator for in-memory
 data, you'll also find that similar patterns can be implemented on top of most language's
-Stream APIs (e.g. C#'s `Stream`, Go's `io.Reader`/`io.Writer`, and Rust's `std::io::Read`/`std::io::Write`). In fact, you'll likely find that your language of choice uses this
+Stream APIs (e.g. C#'s `Stream`, Go's `io.Reader`/`io.Writer`, and Rust's `std::io::Read`/`std::io::Write`).
+In fact, you'll likely find that your language of choice uses this
 pattern to add TLS support to TCP connections, or to introduce compression/decompression
 support for HTTP requests.
 

@@ -30,7 +30,7 @@ affect each line of your code and run them when that code changes - giving you
 (close to) real-time feedback on the quality of your code.
 
 It works brilliantly, but here are certain situations in which it just fails to
-pick up your tests altogether. 
+pick up your tests altogether.
 
 ## Where are my tests?
 

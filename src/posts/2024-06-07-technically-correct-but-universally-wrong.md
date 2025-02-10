@@ -63,7 +63,8 @@ ignore the lead times on building out this critical infrastructure.
 For a prime case study; consider South Africa - where a failure to invest in power generation infrastructure for 20
 years resulted in the country reaching the limit of its power generation capacity in 2004; we're now 20 years down
 the line and regularly scheduled rolling blackouts are still a way of life in Africa's most developed economy. These
-issues are not solved overnight, and in most cases they're shedding $<20\%$ of their total capacity. Game that out for a low-tens of percent increase in capacity and you're starting to see the issue...
+issues are not solved overnight, and in most cases they're shedding $<20\%$ of their total capacity. Game that out
+for a low-tens of percent increase in capacity and you're starting to see the issue...
 
 Of course, electricity generation isn't the only idea being peddled - because priviledged white males working in
 tech cannot help but fall into the trap of assuming that 9 women can make a baby in 1 month. Of course, in this

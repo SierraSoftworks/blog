@@ -79,14 +79,14 @@ and how we were going to execute on it, which placed a heavy up-front
 burden on me, but acted as a forcing function for us to get that vision
 documented well and frequently iterated on.
 
-Over time, though, the conversations turned into more of a formality. 
+Over time, though, the conversations turned into more of a formality.
 Engineers would show up with a solid list of priorities that didn't need
 adjusting, their risks would be relevant and well-scoped, they'd rarely
 work on things outside their top priorities and when they did, it was
 unquestionably the right decision.
 
 About 6 months into this process, we switched lead on this team - having
-another engineer step in and lead the process. I think changing the 
+another engineer step in and lead the process. I think changing the
 leadership of a group is always an interesting test of how robust the
 systems you've built really are, and in this case the transition couldn't
 have gone better. 6 months after that hand-off, and the team is still
@@ -104,8 +104,8 @@ when we first started this journey.
 Okay, so the process is simple. Really simple. Simple enough that it
 makes people raise their eyebrows and say "That doesn't sound like it's
 going to work". It's the kind of simple that makes it possible for a
-senior engineer to lead a team of 4 engineers, take on 4 additional 
-engineers from around the organization (training them up, sharing 
+senior engineer to lead a team of 4 engineers, take on 4 additional
+engineers from around the organization (training them up, sharing
 knowledge, working on cross-cutting projects, etc.), and then have
 time left over to work on technical projects themselves.
 
@@ -135,14 +135,14 @@ lower value to the organization in the immediate term).
 Instead, it's worth evaluating an engineer's seniority by looking at
 the scope of impact that they are able to drive within the organization.
 This is the same way that promotions are evaluated, and for good reason,
-it's the thing that matters most to the organization's bottom line. 
+it's the thing that matters most to the organization's bottom line.
 Micro-managing your junior engineers is an anti-pattern and one that
 sets them up for failure as they become more senior and are expected to
 deliver broader impact with less top-down direction.
 
 This process has the interesting side-effect of requiring every engineer,
-regardless of seniority, to take ownership of their full project 
-lifecycle, including the prioritization, planning, execution, and 
+regardless of seniority, to take ownership of their full project
+lifecycle, including the prioritization, planning, execution, and
 reporting of their work. The scope contained within that work will grow
 as their capabilities increase, but the nature of the work remains the
 same whether you are an intern or a senior engineer on the team.
@@ -209,7 +209,6 @@ the health of the people on your team first, then nothing you do here is
 going to succeed in the long term.
 
 ### Have a team charter
-
 
 ### Have a road map
 Yes, you need to have a vision for where you're going, but in order to make

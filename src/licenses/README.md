@@ -12,7 +12,6 @@ Sierra Softworks applies a couple of difference licenses to the software we rele
 depending on its intended audience and use case. We strive to release much of our
 software under the very permissive MIT license whenever possible.
 
-
 <PostList :posts="licenses" />
 
 <script>

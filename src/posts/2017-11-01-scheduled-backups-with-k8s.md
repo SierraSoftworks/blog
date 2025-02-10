@@ -36,6 +36,7 @@ Let's take a simple example that shows how one would convert a [Job][] to a [Cro
 
 :::: code-group
 ::: code-group-item Job
+
 ```yaml
 apiVersion: batch/v1
   kind: Job
@@ -48,9 +49,11 @@ apiVersion: batch/v1
           - name: hello-world
             image: hello-world
 ```
+
 :::
 
 ::: code-group-item CronJob
+
 ```yaml
 apiVersion: batch/v1beta1
   kind: CronJob
@@ -66,6 +69,7 @@ apiVersion: batch/v1beta1
               - name: hello-world
                 image: hello-world
 ```
+
 :::
 ::::
 
@@ -83,11 +87,12 @@ This means that your backup container can really just run `$YOUR_BACKUP_EXECUTAB
 is done. This removes a huge amount of the complexity that was previously involved with building
 backup containers and lets you focus on exactly the task you want to perform.
 
-But let's not make this too easy, I personally want my backups to end up somewhere safe - otherwise what's the point? To achieve that, let's toss them over to S3 when we're done, giving us a [pretty
-reliable][s3-durability] place to keep track of them.
+But let's not make this too easy, I personally want my backups to end up somewhere safe - otherwise what's the point?
+To achieve that, let's toss them over to S3 when we're done, giving us a [pretty reliable][s3-durability] place to keep track of them.
 
 :::: code-group
 ::: code-group-item Dockerfile
+
 ```dockerfile
 # Fetch the mc command line client
 FROM alpine:latest
@@ -113,9 +118,11 @@ ADD entrypoint.sh /app/entrypoint.sh
 
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 ```
+
 :::
 
 ::: code-group-item Entrypoint
+
 ```bash
 #! /bin/bash
 set -e -o pipefail
@@ -138,6 +145,7 @@ pg_dump $ARGS -Fc "$DB" | mc pipe "pg/$ARCHIVE" || {
 
 echo "Backup complete"
 ```
+
 :::
 ::::
 

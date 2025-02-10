@@ -20,12 +20,13 @@ as part of a scheduled backup process with the ultimate goal of ensuring that yo
 copy of all of your GitHub repositories should the unthinkable happen.
 
 ## Features
-- **Backup Multiple Organizations**, automatically gathering the full list of repositories for
-  each organization through the GitHub API.
-- **Repo Allowlists/Denylists** to provide fine-grained control over which repositories are backed
-  up and which are not.
-- **GitHub Enterprise Support** for those of you running your own GitHub instances and not relying
-  on GitHub.com.
+
+ - **Backup Multiple Organizations**, automatically gathering the full list of repositories for
+   each organization through the GitHub API.
+ - **Repo Allowlists/Denylists** to provide fine-grained control over which repositories are backed
+   up and which are not.
+ - **GitHub Enterprise Support** for those of you running your own GitHub instances and not relying
+   on GitHub.com.
 
 ## Example
 
@@ -90,10 +91,11 @@ several operators and properties which can be used to control this process.
 
 Here are some examples of filters you might choose to use:
 
-  - `!repo.fork || !repo.archived || !repo.empty` - Do not include repositories which are forks, archived, or empty.
-  - `repo.private` - Only include private repositories in your list.
-  - `repo.public && !repo.fork` - Only include public repositories which are not forks.
-  - `repo.name contains "awesome"` - Only include repositories which have "awesome" in their name.
-  - `(repo.name contains "awesome" || repo.name contains "cool") && !repo.fork` - Only include repositories which have "awesome" or "cool" in their name and are not forks.
-  - `!release.prerelease && !asset.source-code` - Only include release artifacts which are not marked as pre-releases and are not source code archives.
-  - `repo.name in ["git-tool", "grey"]` - Only include repositories with the names "git-tool" or "grey".
+ - `!repo.fork || !repo.archived || !repo.empty` - Do not include repositories which are forks, archived, or empty.
+ - `repo.private` - Only include private repositories in your list.
+ - `repo.public && !repo.fork` - Only include public repositories which are not forks.
+ - `repo.name contains "awesome"` - Only include repositories which have "awesome" in their name.
+ - `(repo.name contains "awesome" || repo.name contains "cool") && !repo.fork` - Only include repositories which
+    have "awesome" or "cool" in their name and are not forks.
+ - `!release.prerelease && !asset.source-code` - Only include release artifacts which are not marked as pre-releases and are not source code archives.
+ - `repo.name in ["git-tool", "grey"]` - Only include repositories with the names "git-tool" or "grey".

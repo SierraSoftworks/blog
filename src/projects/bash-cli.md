@@ -10,7 +10,7 @@ date: 2021-02-13
 ---
 
 # Bash CLI
-**A command line framework built using nothing but Bash and compatible with anything**
+**A command line framework built using nothing but Bash and compatible with anything.**
 
 Bash CLI was borne of the need to provide a common entrypoint into a range of scripts
 and tools for a project. Rather than port the scripts to something like Go or Python,
@@ -76,6 +76,7 @@ complete -F _bash_cli my-app
 ```
 
 If you want to add completion to your commands just create `[command].complete` file which returns array.
+
 ```sh
 OPTIONS=("one" "two" "three")
 echo ${OPTIONS[@]}

@@ -26,12 +26,13 @@ Easily monitor your system's resource usage using our powerful replacement for t
 :::
 
 ## Features
+
 ### Graphed CPU Usage
 
 CoreMonitor keeps track of each of your processor's cores, logging
 their individual load at set intervals. It then generates up to the
 second graphs showing usage over the past few seconds - allowing you
-to keep track of what your CPU is really doing. 
+to keep track of what your CPU is really doing.
 
 ### View Volume Level
 
@@ -52,8 +53,6 @@ CoreMonitor allows applications without their own Logitech G19 integration
 to easily display notifications using either a basic HTTP API, or by sending
 structured XML.
 
-
-
 ## API Documentation
 
 ### Get System Information
@@ -71,7 +70,6 @@ Host: localhost:56302
 
 **NOTE**: This requires CoreMonitor to be running on your machine to work
 :::
-
 
 #### `GET /system/version/show`
 This will display a notification on your G15/G19 showing the current version of CoreMonitor.
@@ -92,9 +90,10 @@ Host: localhost:56302
 #### `GET /notifications/show{?title,text,displayperiod}`
 This will show a notification on your G15/G19 display with the provided `title` and `text` for the given display period.
 
-* `title` - Specifies the title to be displayed on the notification. Should be less than 20 characters long to prevent clipping.  
-* `text` - Specifies the text to be displayed on the notification. Should be less than 200 characters long to prevent clipping.  
-* `displayperiod` - Specifies the amount of time in milliseconds for which the notification should be displayed. If the value `0` is used, then the notification will remain on the display until the user closes it by pressing the *OK* button.  
+ - `title` - Specifies the title to be displayed on the notification. Should be less than 20 characters long to prevent clipping.
+ - `text` - Specifies the text to be displayed on the notification. Should be less than 200 characters long to prevent clipping.
+ - `displayperiod` - Specifies the amount of time in milliseconds for which the notification should be displayed.
+   If the value `0` is used, then the notification will remain on the display until the user closes it by pressing the *OK* button.
 
 ```http
 GET /notifications/show?title=Test&text=This%20is%20a%20test&displayperiod=10000 HTTP/1.1
@@ -104,12 +103,11 @@ Host: localhost:56302
 ::: tip
 [Click here to Test](http://localhost:56302/notifications/show?title=Test&text=This%20is%20a%20test&displayperiod=10000)
 
-This will show a notification for 10 seconds, after which time the notification will disappear. 
+This will show a notification for 10 seconds, after which time the notification will disappear.
 If you would like to hide it prematurely, you can press either the *Back* or *OK* button.
 
 **NOTE**: This requires CoreMonitor to be running on your machine to work
 :::
-
 
 #### `POST /notifications/show`
 This method allows you to show a notification with a custom icon. To trigger the notification you submit a `POST`

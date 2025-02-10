@@ -314,6 +314,7 @@ As with the Agile Manifesto, the entries on the right have value, but I consider
 more.
 
 ## Further Material
+
  - **[The Field Guide to Understanding 'Human Error'][sidney_dekker] by Sidney Dekker**
 
    This is an excellent book which I would argue is as important, if not more so, than the Google SRE book.
@@ -338,4 +339,4 @@ more.
 [srecon2019_learning_from_incidents]: https://www.usenix.org/conference/srecon19emea/presentation/stenning
 [leaddev_three_mile_island]: https://www.youtube.com/watch?v=1xQeXOz0Ncs
 
-[^autobahn_safety]: https://en.wikipedia.org/wiki/Autobahn#Safety
+[^autobahn_safety]: Read more about [Autobahn Safety](https://en.wikipedia.org/wiki/Autobahn#Safety)

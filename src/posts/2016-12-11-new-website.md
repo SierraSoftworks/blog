@@ -9,7 +9,7 @@ tags:
   - projects
 ---
 
-# New Website 
+# New Website
 Sierra Softworks has a brand new website, rebuilt from the ground up using the
 brilliant [Hexo][hexo] project. A lot of emphasis was placed on making it as
 easy as possible for us to publish new content here while minimizing the rate
@@ -35,6 +35,5 @@ you can download some of their installers...
  - [**CoreMonitor**](https://cdn.sierrasoftworks.com/coremonitor/CoreMonitorSetup.exe)
  - [**Standby Inhibitor**](https://cdn.sierrasoftworks.com/standby-inhibitor/Standby%20Inhibitor%201.0.exe)
  - [**WKD**](https://cdn.sierrasoftworks.com/wkd/WKDSetup.exe)
-
 
 [hexo]: https://hexo.io

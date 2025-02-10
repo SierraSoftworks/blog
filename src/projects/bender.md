@@ -10,7 +10,7 @@ repo: sierrasoftworks/bender
 ---
 
 # Bender
-**Bender quotes as a web service**
+**Bender quotes as a web service.**
 
 Bender is a small API which allows you to run a BaaS stack (Bender as a Service)
 for those times you really wish you could tell a web app to bite your shiny metal
@@ -31,18 +31,18 @@ for micro-service technologies. Over the course of its existence, it has provide
 me with a means to evaluate some of the following practices and technologies (and
 many others I'm sure I've forgotten).
 
-- ASP.NET Core
-- Serving multiple content types based on `Accept` headers
-- CI/CD to Google Kubernetes Service with Helm and Azure DevOps
-- Google AppEngine
-- Google Firebase
-- Golang + [girder](https://github.com/SierraSoftworks/girder)
-- Azure CosmosDB
-- Azure Table Storage
-- CI/CD to Azure Kubernetes Service with GitHub Actions
-- Rust + Rocket
-- Rust + actix-web
-- Azure Blob Storage in Rust
+ - ASP.NET Core
+ - Serving multiple content types based on `Accept` headers
+ - CI/CD to Google Kubernetes Service with Helm and Azure DevOps
+ - Google AppEngine
+ - Google Firebase
+ - Golang + [girder](https://github.com/SierraSoftworks/girder)
+ - Azure CosmosDB
+ - Azure Table Storage
+ - CI/CD to Azure Kubernetes Service with GitHub Actions
+ - Rust + Rocket
+ - Rust + actix-web
+ - Azure Blob Storage in Rust
 
 ## Running your own
 We publish a Docker image for Bender on the DockerHub. The fastest way to get Bender
@@ -79,9 +79,9 @@ Accept: application/json
 
 The following content types are supported:
 
-- `application/json`
-- `text/html`
-- `text/plain`
+ - `application/json`
+ - `text/html`
+ - `text/plain`
 
 If you provide a `{who}` component (which is optional) you can specify which Futurama
 character's quotes you'd like to receive.
@@ -98,16 +98,19 @@ things and don't have any quotes available for you, or you've specified a `{who}
 quotes for). Depending on the `Accept` header you have provided, you may receive one of the following responses.
 
 ###### application/json
+
 ```json
 { "who": "Bender", "quote": "Bite my shiny metal ass." }
 ```
 
 ###### text/plain
+
 ```
 Bite my shiny metal ass. – Bender
 ```
 
 ###### text/html
+
 ```html
 <html>
     <head>

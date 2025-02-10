@@ -132,8 +132,9 @@ There's no small amount of snark in this post, but there is a very serious core 
 think about reliability we immediately jump to thoughts of system design patterns which can allow us to reduce blast
 radius, layer redundancy, and give ourselves the best shot of weathering a bad day.
 
-But complexity is its own form of reliability challenge and ignoring it is a really bad idea :tm: (especially at the kind of scale where the compounding probabilities of failure introduced by additional nodes required for scaling are
-far outweighed by the additional risk introduced by adding more components).
+But complexity is its own form of reliability challenge and ignoring it is a really bad idea :tm:
+(especially at the kind of scale where the compounding probabilities of failure introduced by additional nodes
+required for scaling are far outweighed by the additional risk introduced by adding more components).
 
 Conceptually, we can think of this in terms of a reliability cost from architectural complexity (which has a negative
 scaling factor associated with it but a large constant cost) and the reliability cost of scaling (which has a low

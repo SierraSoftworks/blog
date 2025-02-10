@@ -29,6 +29,7 @@ We use the [`setval(sequence, number, is_called)`](https://www.postgresql.org/do
 and set `is_called = false` in conjunction with `COALESCE(MAX + 1, 1)` to ensure that, with an empty table, the next sequence
 value is `1` as expected.
 
+<!-- markdownlint-disable line-length -->
 ```sql
 -- This function is responsible for fixing the id sequences for all tables in
 -- a database. It is useful when you have used pg_dump to restore data from another
@@ -80,3 +81,4 @@ WHERE column_default LIKE 'nextval%';
 -- Cleanup the function
 DROP FUNCTION fix_sequence(text, text);
 ```
+<!-- markdownlint-enable line-length -->

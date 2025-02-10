@@ -43,7 +43,7 @@ your own cluster, and without needing to spend a small fortune on virtual machin
 > platform. There were definitely points where, were it not for having seen someone
 > do this before, I would have considered throwing in the towel and abandoning this
 > project.
-> 
+>
 > If you'd like to read something written by someone with far more experience and
 > eloquence than myself, go check out [his repo](https://github.com/kelseyhightower/serverless-vault-with-cloud-run).
 
@@ -74,7 +74,7 @@ a cost of about $90/month and about 2 days/month worth of maintenance, updates, 
 Hashicorp's own managed HCP Vault offering is available in a "developer" flavour for some $20/month,
 which is cheaper but doesn't offer fail-over or backups (yeesh). If you want backups and fail-over,
 you'll need to step up to their "Starter" plan at ~$340/month (YEESH!) which is a fair bit more than
-I'm willing to spend to support my <s>addiction</s> hobby.
+I'm willing to spend to support my ~~addiction~~ hobby.
 
 Contrast that with the $0.65 I've spent running Vault on Azure Functions for the last month, with
 none of the maintenance overhead and native support for backups (not to mention the amazing durability
@@ -128,13 +128,13 @@ reduce the number of credentials we need to maintain and configure for our deplo
 ```hcl
 seal "azurekeyvault" {
     # $AZURE_TENANT_ID
-    tenant_id  = "46646709-b63e-4747-be42-516edeaf1e14" 
-    
-    # $VAULT_AZUREKEYVAULT_VAULT_NAME
-    vault_name = "hc-vault"    
+    tenant_id  = "46646709-b63e-4747-be42-516edeaf1e14"
 
-    # $VAULT_AZUREKEYVAULT_KEY_NAME              
-    key_name   = "vault_key"                            
+    # $VAULT_AZUREKEYVAULT_VAULT_NAME
+    vault_name = "hc-vault"
+
+    # $VAULT_AZUREKEYVAULT_KEY_NAME
+    key_name   = "vault_key"
 }
 ```
 
@@ -145,7 +145,9 @@ going to have Azure Functions launch Vault, and Vault will use a Managed Service
 to retrieve its unseal keys from Azure KeyVault. Data storage will be provided by an Azure Storage
 account.
 
-```mermaid: A diagram showing how vault connects to Azure Storage and Key Vault.
+```mermaid
+# A diagram showing how vault connects to Azure Storage and Key Vault.
+
 graph LR
     User([User]) --> Fn
     Fn[Azure Function] --> App[Vault]
@@ -156,7 +158,9 @@ graph LR
 ```
 
 ### Configuration
+
 #### Vault
+
 ```hcl
 ui = true
 
@@ -181,6 +185,7 @@ storage "azure" {
 ```
 
 #### Azure Functions
+
 ```json
 {
   "version": "2.0",
@@ -231,6 +236,7 @@ like the following (using Go's templating language to inject environment variabl
 
 :::: code-group
 ::: code-group-item vault.hcl.tpl
+
 ```hcl{4,9,14-16}
 ui = true
 
@@ -250,9 +256,11 @@ storage "azure" {
     container   = "{{ env "AZURE_BLOB_CONTAINER" }}"
 }
 ```
+
 :::
 
 ::: code-group-item host.json
+
 ```json{15,17}
 {
   "version": "2.0",
@@ -279,6 +287,7 @@ storage "azure" {
   }
 }
 ```
+
 :::
 ::::
 

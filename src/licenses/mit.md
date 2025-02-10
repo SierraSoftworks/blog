@@ -14,20 +14,23 @@ the content of the license itself and is not a substitute for understanding the 
 
 ::: tip
 **You may:**
-- Use it commercially
-- Distribute freely
-- Modify as you wish
-- Use it privately
+
+ - Use it commercially
+ - Distribute freely
+ - Modify as you wish
+ - Use it privately
 :::
 
 ::: warning
 **You must:**
-- Include the original license and copyright notice
+
+ - Include the original license and copyright notice
 :::
 
 ::: danger
 **You must not:**
-- Hold us liable
+
+ - Hold us liable
 :::
 
 <!-- more -->
@@ -35,7 +38,7 @@ the content of the license itself and is not a substitute for understanding the 
 ## The License
 
 ```
-Copyright © 2021 Sierra Softworks
+Copyright © 2025 Sierra Softworks
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
 documentation files (the "Software"), to deal in the Software without restriction, including without limitation the

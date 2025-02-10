@@ -14,24 +14,27 @@ the content of the license itself and is not a substitute for understanding the 
 
 ::: tip
 **You may:**
-- Use it commercially
-- Distribute freely
-- Modify as you wish
-- Use it privately
-- Use any included patents
+
+ - Use it commercially
+ - Distribute freely
+ - Modify as you wish
+ - Use it privately
+ - Use any included patents
 :::
 
 ::: warning
 **You must:**
-- Disclose your source code
-- Include the original license and copyright notice
-- Use the same license
-- State any changes you make
+
+ - Disclose your source code
+ - Include the original license and copyright notice
+ - Use the same license
+ - State any changes you make
 :::
 
 ::: danger
 **You must not:**
-- Hold us liable
+
+ - Hold us liable
 :::
 
 <!-- more -->

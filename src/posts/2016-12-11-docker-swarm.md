@@ -2,7 +2,7 @@
 title: Docker Swarm
 date: 2016-12-11T09:26:53Z
 permalinkPattern: :year/:month/:day/:slug/
-tags: 
+tags:
     - docker
     - docker-swarm
     - ops
@@ -42,7 +42,7 @@ On the other side of the coin, there are classes of problems which are elegantly
 Docker, most of them revolving around the concepts of CI
 and CD. If you're considering applying Docker to
 solve the problem of deploying services in a consistent, accessible and standardized manner
-then I'd say go for it. 
+then I'd say go for it.
 
 Not only does Docker offer a great API for building your deployables, it offers a great
 ecosystem of tooling and building blocks on which to fabricate your services. This, combined
@@ -60,6 +60,7 @@ orchestrators are intended to fill, offering the ability to recover from infrast
 handling application crashes and monitoring the health of your services.
 
 ### Production Requirements
+
 1. Manage the lifecycle of applications, including restarting them following crashes.
 1. Provide application-level healthchecks to monitor service availability.
 1. Enable easy horizontal scaling of your applications behind a service abstraction.
@@ -95,7 +96,7 @@ it unfortunately hasn't integrated yet. The most glaringly obvious of these is t
 secrets management functionality. For a tool which comes "batteries included" for everything else, these are
 problems which really stand out - because they require actual effort to address.
 
-Swarm also lacks any kind of automated loadbalancer, something which Kubernetes and Rancher both provide 
+Swarm also lacks any kind of automated loadbalancer, something which Kubernetes and Rancher both provide
 and which greatly simplifies exposing your services. This is a problem easily solved using something like
 [Traefik][traefik], something I have covered doing [here](/2016/12/11/traefik-on-swarm), but like the volume
 problem - it's something which is glaring in its absence from Swarm itself.
@@ -138,7 +139,7 @@ tools make them far better suited to those tasks than Swarm currently is.
 
 In addition to that, Swarm truly is a relatively new and unproven technology. If your job requires that the
 orchestration tool you use is stable to more than a couple of 9's, bite the bullet and pay your overhead costs
-to run something which provides those guarantees (implicit or explicit). 
+to run something which provides those guarantees (implicit or explicit).
 
 ## General Swarm Criticisms
 Docker Swarm has had some interesting criticisms levelled at it since its announcement, some are the
@@ -180,6 +181,7 @@ right now, but if you're looking for something that can reliably scale to [Pokem
 [marathon]: https://mesosphere.github.io/marathon/
 [ansible]: https://www.ansible.com
 [semver]: http://semver.org
+[traefik]: https://traefik.io
 
 [pokego-scale]: https://cloudplatform.googleblog.com/2016/09/bringing-Pokemon-GO-to-life-on-Google-Cloud.html
 

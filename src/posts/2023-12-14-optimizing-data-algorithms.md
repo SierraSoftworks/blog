@@ -82,15 +82,16 @@ it can still be useful to be aware of them when doing extremely large numbers of
 (e.g. when Advent of Code asks you to run the same thing $10^9$ times).
 
 Some cool tricks in this space include:
-- Dividing by powers of two is equivalent to a bit-shift, which is **much** faster than division.
-  This lets you replace `x / 16` with `x >> 4` and `x / 1024` with `x >> 10` for some nice performance
-  advantages (your compiler may take care of this for you, in which case maybe just write the human readable code).
-- Multiplying by powers of two is equivalent to a bit-shift, which is also faster than multiplication.
-  This lets you replace `x * 16` with `x << 4` and `x * 1024` with `x << 10` in the same manner as the division
-  approach.
-- Taking the remainder of a division by a power of two is equivalent to a bitwise AND, which is also faster
-  than normal remainder division. This lets you replace `x % 16` with `x & (16 - 1)` and `x % 1024` with `x & (1024 - 1)`,
-  the trick being that it only works for powers of two (and you need to be careful about negative numbers).
+
+ - Dividing by powers of two is equivalent to a bit-shift, which is **much** faster than division.
+   This lets you replace `x / 16` with `x >> 4` and `x / 1024` with `x >> 10` for some nice performance
+   advantages (your compiler may take care of this for you, in which case maybe just write the human readable code).
+ - Multiplying by powers of two is equivalent to a bit-shift, which is also faster than multiplication.
+   This lets you replace `x * 16` with `x << 4` and `x * 1024` with `x << 10` in the same manner as the division
+   approach.
+ - Taking the remainder of a division by a power of two is equivalent to a bitwise AND, which is also faster
+   than normal remainder division. This lets you replace `x % 16` with `x & (16 - 1)` and `x % 1024` with `x & (1024 - 1)`,
+   the trick being that it only works for powers of two (and you need to be careful about negative numbers).
 
 ### Memory Allocation
 One of the most common examples of how the code we write can include hidden scaling factors
@@ -109,7 +110,7 @@ Pascal's Triangle
 1   4   6   4   1
 
 And in Array Form:
-  
+
 1
 1 1
 1 2 1
@@ -213,7 +214,7 @@ fn main() {
         for i in 1..height {
             triangle[height][i] = triangle[height-1][i - 1] + triangle[height-1][i];
         }
-        
+
         triangle[height][height] = 1;
     }
 }
@@ -223,7 +224,6 @@ In this case, we've gone from an implementation which allocates memory $O(n^2)$ 
 only allocates memory $O(1)$ times and seen a 66% reduction in execution time as a result. Another
 way to think about this is that by not paying attention to the performance cost of allocating memory
 on the heap, our algorithm was $3\times$ slower than it needed to be!
-
 
 ### Reducing Work
 Advent of Code 2023 Day 14 Part 2 is a fun one, it asks you to apply variations of the same transformation

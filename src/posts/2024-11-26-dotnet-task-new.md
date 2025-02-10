@@ -56,6 +56,7 @@ class NeverCompletedWorkloadMock : IWorkload
 ```
 
 My thought process reviewing this code went something like this:
+
  - "This is not something I see often, it seems like they're constructing a no-op task, isn't `Task.CompletedTask` the idiomatic way to do that?"
  - "They're trying to ensure that the `Task` never completes, so how would that work at all if the associated action returns immediately?"
  - "The tests are passing, so this clearly does work, that means I am missing an understanding of how this works under the hood."
@@ -106,10 +107,11 @@ So what makes `Task.Run` special? Well, if we look at the documentation for `Tas
 Digging into `Task.StartNew`, we see (amongst other important notes) the following:
 
 > Use the `Task.StartNew` method [...] in scenarios where you want to control the following:
-> - [...]
-> - The task scheduler. The overloads of the `Task.Run` method use the default task scheduler. To control the task scheduler,
->   call a `Task.StartNew` overload with a scheduler parameter. For more information, see
->   [`TaskScheduler`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler?view=net-9.0).
+>
+>  - [...]
+>  - The task scheduler. The overloads of the `Task.Run` method use the default task scheduler. To control the task scheduler,
+>    call a `Task.StartNew` overload with a scheduler parameter. For more information, see
+>    [`TaskScheduler`](https://learn.microsoft.com/en-us/dotnet/api/system.threading.tasks.taskscheduler?view=net-9.0).
 
 Okay, that's interesting - so there's logic involved in both `Task.Run` and `Task.StartNew` which leverages the
 `TaskScheduler`, and it would likely be fair to assume that failing to schedule a task would prevent it from

@@ -199,14 +199,17 @@ def get_numbers():
 This results in the execution "fanning out" and then combining again to
 arrive at the final result.
 
-```mermaid: A diagram showing how get_numbers spawns three threads, waiting for each to complete, before returning the list of results.
+```mermaid
+# A diagram showing how get_numbers spawns three threads, waiting for each to complete, before returning the list of results.
+
 flowchart LR
 
     caller --> getn
 
     subgraph getns ["get_numbers()"]
         direction LR
-        getn["get_numbers()"] --> |"start()"| getn3["GetNumberThread(3)"] & getn1["GetNumberThread(1)"] & getn2["GetNumberThread(2)"] --> |"join()"| list["list(...)"] --> return["return list(...)"]
+        getn["get_numbers()"] --> |"start()"| getn3["GetNumberThread(3)"] & getn1["GetNumberThread(1)"] & getn2["GetNumberThread(2)"] --> |"join()"| list["list(...)"]
+        list --> return["return list(...)"]
     end
 
     style caller stroke:orange,fill:orange,color:black
@@ -269,7 +272,6 @@ sequenceDiagram
     gn ->> gn1: done yet?
     gn1 -->> gn: yup, result=1
 ```
-
 
 We can implement this state machine pattern using something like the following:
 
@@ -338,7 +340,10 @@ important thing to note here is that we're never leaving the calling
 thread but we are still able to run multiple concurrent state machines.
 This is a great example of the different between concurrency and parallelism.
 
-```mermaid: A diagram showing how each state machine cycles through its internal states until it is complete, at which point the results are aggregated to return the final values.
+```mermaid
+# A diagram showing how each state machine cycles through its internal states until it is complete,
+# at which point the results are aggregated to return the final values.
+
 flowchart LR
     caller --> getn
 
@@ -499,6 +504,7 @@ extremely similar.
 :::: code-group
 
 ::: code-group-item C#
+
 ```csharp
 /// <summary>
 /// An interface which describes an iterator in C#, along with its
@@ -518,9 +524,11 @@ public interface IEnumerator<T>
     T Current { get; }
 }
 ```
+
 :::
 
 ::: code-group-item Python
+
 ```python
 class Iterator:
     """
@@ -535,6 +543,7 @@ class Iterator:
         raise StopIteration
         
 ```
+
 :::
 
 ::::
@@ -554,7 +563,6 @@ to execute multiple functions concurrently.
 Most of this code is identical to the re-entrant functions code, with
 only the highlighted parts having changed.
 :::
-
 
 ```python{21,30-34}
 from typing import Iterator, Union
@@ -635,7 +643,6 @@ to run concurrently.
 This is why people sometimes say that "async is contagious" - you need
 to use it everywhere you would block before you see the benefits.
 :::
-
 
 This code executes identically to the re-entrant functions example, but simplifying
 the `get_number()` function starts to highlight something interesting:

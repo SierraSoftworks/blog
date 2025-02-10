@@ -23,7 +23,7 @@ looking add another printer to my home lab, alongside my trusty Voron 2.4R2, and
 of several printers I considered - it is also ultimately the one I chose to purchase based on its unique
 set of trade-offs.
 
-<img src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-dark.jpg" width="500" />
+<img src="//cdn.sierrasoftworks.com/blog/2024-10-24-prusa-xl-dark.jpg" width="500" alt="An image of the Prusa XL." />
 
 The biggest challenge I faced making this decision was the lack of any deep technical reviews of the Prusa
 XL, so I'm going to try and close that gap here by sharing my thoughts and experiences through the lens of
@@ -126,15 +126,22 @@ other things while the printer does its job.
 
 ### The Firmware Experience
 While we're on the topic of things the printer does to keep itself safe, I think it's worth talking about the firmware
-and design decisions taken by the Prusa team. I've spent years tweaking and tuning my Voron configurations (with over 400 commits to my configuration management repository), and watching the Prusa XL do its thing highlights some brilliant ideas which place an emphasis on safety and reliability over speed and benchmarking.
+and design decisions taken by the Prusa team. I've spent years tweaking and tuning my Voron configurations
+(with over 400 commits to my configuration management repository), and watching the Prusa XL do its thing highlights
+some brilliant ideas which place an emphasis on safety and reliability over speed and benchmarking.
 
 The first thing you'll notice is the way in which the gantry performs its homing operation. The Prusa XL uses Sensorless
 Homing which relies on the motor driver's StallGuard functionality to detect when the gantry has reached the end of its
 travel. This is something many Voron users use, but the Prusa XL takes the process a step further to alleviate a range
 of failure modes which are all too familiar to Voron users:
 
- - If the print head doesn't move a significant distance during the initial homing operation, the printer will attempt to home on the opposite side of the axis, ensuring that false-positives caused by sticktion don't cause the printer to home incorrectly.
- - Once the printer has established a baseline zero, it will then perform a series of rapid validation movements testing the X and Y zero stops to ensure that they are correctly zeroed. On a Voron this isn't hugely necessary from a precision perspective - so long as you're broadly in the right area nobody cares if you are 0.1mm off - but with a toolchanger like the XL, this adds a level of accuracy and reliability.
+ - If the print head doesn't move a significant distance during the initial homing operation, the printer will attempt
+   to home on the opposite side of the axis, ensuring that false-positives caused by sticktion don't cause the printer
+   to home incorrectly.
+ - Once the printer has established a baseline zero, it will then perform a series of rapid validation movements testing
+   the X and Y zero stops to ensure that they are correctly zeroed. On a Voron this isn't hugely necessary from a precision
+   perspective - so long as you're broadly in the right area nobody cares if you are 0.1mm off - but with a toolchanger
+   like the XL, this adds a level of accuracy and reliability.
 
 This kind of robust, well thought out, and well integrated experience extends to every aspect of using the printer.
 Changing filament is a breeze, common maintenance and print tuning options are easily at hand and work well, the initial

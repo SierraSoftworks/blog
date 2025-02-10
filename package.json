@@ -10,7 +10,8 @@
   "repository": "https://github.com/SierraSoftworks/blog.git",
   "scripts": {
     "dev": "vuepress dev src",
-    "build": "vuepress build src --dest dist"
+    "build": "vuepress build src --dest dist",
+    "test": "markdownlint-cli2 '**/*.md' '#node_modules'"
   },
   "license": "MIT",
   "devDependencies": {
@@ -23,6 +24,7 @@
     "@vuepress/theme-default": "2.0.0-rc.74",
     "@vuepress/utils": "2.0.0-rc.19",
     "dayjs": "^1.11.13",
+    "markdownlint-cli2": "0.17.2",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
     "mermaid": "^11.4.1",

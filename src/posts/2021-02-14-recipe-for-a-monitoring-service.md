@@ -9,7 +9,7 @@ categories:
     - development
     - operations
     - theory
-tags: 
+tags:
     - development
     - operations
     - theory
@@ -101,15 +101,15 @@ Monitoring stacks which focus on the bottom of this hierarchy first and ignore t
 often be cheap to operate, but may be catastrophically costly from a customer experience
 perspective.
 
-
 ### Key Requirements
-- It should provide engineers with the context necessary to rapidly classify and triage a given issue.
-- It should alert the engineers best positioned to remediate a given issue.
-- It should effectively classify impact and use this to determine how and when a human operator should alerted.
-- It should provide teams with self-service control over their monitoring configuration.
-- It should be able to detect issues quickly.
-- It should be able to detect issues reliably.
-- It should have a high signal to noise ratio (real issues vs non-issues).
+
+ - It should provide engineers with the context necessary to rapidly classify and triage a given issue.
+ - It should alert the engineers best positioned to remediate a given issue.
+ - It should effectively classify impact and use this to determine how and when a human operator should alerted.
+ - It should provide teams with self-service control over their monitoring configuration.
+ - It should be able to detect issues quickly.
+ - It should be able to detect issues reliably.
+ - It should have a high signal to noise ratio (real issues vs non-issues).
 
 ### Doing your Research
 When evaluating a monitoring stack, there are a few things I look for. It must be **sensitive** to changes in the expected state of the
@@ -169,7 +169,7 @@ Instead, focus on defining a fully featured and well structured API through whic
 tune their behaviour. Once you have that, build microservices or plugins which are responsible for doing elementary data transformation and ingestion on behalf
 of your legacy systems and have them consume that API directly. This approach allows you to add support for new data sources without needing to touch your core
 service, enables you to create bespoke integrations for each of your customers with minimal effort and even allows you to offload particularly costly operations
-to a fleet of stateless data transformation agents before events even reach your stack. 
+to a fleet of stateless data transformation agents before events even reach your stack.
 
 A particularly nice option for these integrations is to leverage a Functions as a Service platform like [AWS Lambda](https://aws.amazon.com/lambda/),
 [OpenFaaS](https://github.com/openfaas/faas) or [Kubeless](https://kubeless.io/).
@@ -184,31 +184,48 @@ evaluation.
 :::
 
 ### Fall Into Success
-The hallmark of any good framework is that it's easier to do things the right way than it is to do it the wrong way. In most cases, this is the result of the engineers who build the framework being aware of the internal biases and fallacies that people make on a daily basis, designing their system to either leverage or avoid them.
+The hallmark of any good framework is that it's easier to do things the right way than it is to do it the wrong way. In most cases, this is
+the result of the engineers who build the framework being aware of the internal biases and fallacies that people make on a daily basis,
+designing their system to either leverage or avoid them.
 
-When you're designing your stack and its API, try to keep this in mind. Keep the number of decisions that a customer has to make to a minimum, guide them down the well-paved-road to success and present them with easy to select forks rather than complex intersections with a number of potentially correct routes to their destination.
+When you're designing your stack and its API, try to keep this in mind. Keep the number of decisions that a customer has to make to a
+minimum, guide them down the well-paved-road to success and present them with easy to select forks rather than complex intersections
+with a number of potentially correct routes to their destination.
 
 #### Simple Options
-Wherever your customers need to make a decision, keep the list of options to a minimum. Humans are really, really bad at making decisions when faced with a large number of options - so help them along and ask "sushi or pizza for lunch?" to keep it quick. **Drive the conversation**.
+Wherever your customers need to make a decision, keep the list of options to a minimum. Humans are really, really bad at making decisions
+when faced with a large number of options - so help them along and ask "sushi or pizza for lunch?" to keep it quick. **Drive the conversation**.
 
 ##### Service Status
+
  - `healthy`
  - `unhealthy`
- 
- Giving intermediary options like "warning" or "unknown" simply leads to confusion about what is actionable and what isn't. Either your service is healthy or it isn't. If a check can't determine which it is, the check isn't checking the right thing.
+
+ Giving intermediary options like "warning" or "unknown" simply leads to confusion about what is actionable and what isn't. Either your
+ service is healthy or it isn't. If a check can't determine which it is, the check isn't checking the right thing.
 
 ##### Priority
+
  - `high` or "wake me up at 0300 on a Sunday if this breaks"
  - `low` or "I'll look at this on Tuesday when I'm back from my long weekend"
- 
- Nobody knows what a "medium" priority alert means: does that mean I can finish my mug of coffee, or do I need to sprint to my desk? Is this impacting customers, or is the system just feeling cranky after getting no attention from ops for 3.217 femtoseconds? Keep things simple and actionable, but also encourage your customers to design systems to fail in one of two ways: it's actually down and needs someone on the double vs the system can limp along but needs some help to get back on its feet when you can spare the time.
 
-Having a database server fail on you should fall into the latter category, losing a datacenter will probably fall into the former (unless you collect DCs like I collect Lego).
+Nobody knows what a "medium" priority alert means: does that mean I can finish my mug of coffee, or do I need to sprint to my desk? Is this
+impacting customers, or is the system just feeling cranky after getting no attention from ops for 3.217 femtoseconds? Keep things simple and
+actionable, but also encourage your customers to design systems to fail in one of two ways: it's actually down and needs someone on the double
+vs the system can limp along but needs some help to get back on its feet when you can spare the time.
+
+Having a database server fail on you should fall into the latter category, losing a datacenter will probably fall into the former
+(unless you collect DCs like I collect Lego).
 
 ### Events as a unit of work
-Remember that API I mentioned? It works really well if the things it receives are "events". An event can hold whatever information you deem necessary, but it should represent the change in state of a particular service or component. By working with a stream of events, you can design your stack to operate as a series of simple, stateless, actors which are responsible for processing a certain type of event and (in some cases) generating others.
+Remember that API I mentioned? It works really well if the things it receives are "events". An event can hold whatever information you deem
+necessary, but it should represent the change in state of a particular service or component. By working with a stream of events, you can
+design your stack to operate as a series of simple, stateless, actors which are responsible for processing a certain type of event and
+(in some cases) generating others.
 
-If your organization already has a message queue system in place, use it. Build libraries and templates which enable your customers to quickly plug into it and start generating events. Try and design a schema which enables the caller to provide configuration for everything your core service offers, you want your customers to be in as much control as possible (and no more).
+If your organization already has a message queue system in place, use it. Build libraries and templates which enable your customers to quickly
+plug into it and start generating events. Try and design a schema which enables the caller to provide configuration for everything your core
+service offers, you want your customers to be in as much control as possible (and no more).
 
 ```yaml
 alert:
@@ -217,10 +234,10 @@ alert:
     since: 2021-02-14T01:13:01Z
     message: |
         This instance is no longer responding to health probes successfully.
-         
+
         Received: 503 Service Unavailable
         Expected: 200 OK
-    
+
 context:
     region: eu-west-1a
     service: bender
@@ -254,7 +271,7 @@ plugins:
             This instance's healthcheck has failed, which indicates that it is no longer
             able to serve traffic. **It will be automatically removed from the load balancer**
             and traffic will be routed to other instances automatically.
-             
+
             Please investigate why this instance failed so that we can prevent the issue
             from occurring again in future.
 
@@ -273,11 +290,18 @@ plugins:
 ```
 
 ### Data Collection
-Data collection might sound like the most difficult part of your stack, but in practice this part tends to be pretty easy. Not only will most of your customers already have some kind of data collection system in place (whether it be [Zabbix](https://www.zabbix.com/), [Nagios](https://www.nagios.com), [Sensu](https://sensu.io/) or any one of the hundreds of other options out there).
+Data collection might sound like the most difficult part of your stack, but in practice this part tends to be pretty easy. Not only will most of
+your customers already have some kind of data collection system in place (whether it be [Zabbix](https://www.zabbix.com/), [Nagios](https://www.nagios.com),
+[Sensu](https://sensu.io/) or any one of the hundreds of other options out there).
 
-What you want to focus in this arena is how the collected data is surfaced to your monitoring stack, how to simplify the job of adding more visibility and how to identify and improve low quality data collectors/checks. What has worked very well for us is allowing the same check definitions used to control how data is collected to determine what configuration we send to our API. This allows the way a check is handled to be defined alongside the check itself and can greatly improve the accessibility and long term maintainability of your solution.
+What you want to focus in this arena is how the collected data is surfaced to your monitoring stack, how to simplify the job of adding more visibility
+and how to identify and improve low quality data collectors/checks. What has worked very well for us is allowing the same check definitions used to
+control how data is collected to determine what configuration we send to our API. This allows the way a check is handled to be defined alongside
+the check itself and can greatly improve the accessibility and long term maintainability of your solution.
 
-When designing your data ingestion system, keep in mind that some of your customers may make use of Monitoring as a Service products like [DataDog](https://www.datadoghq.com/) and [Loggly](https://www.loggly.com). These external systems will usually want to report data to you via WebHooks, in which case your platform should support that in a safe and frictionless fashion.
+When designing your data ingestion system, keep in mind that some of your customers may make use of Monitoring as a Service products
+like [DataDog](https://www.datadoghq.com/) and [Loggly](https://www.loggly.com). These external systems will usually want to report data
+to you via WebHooks, in which case your platform should support that in a safe and frictionless fashion.
 
 ### Static Pre-filtering
 No matter what you do, you're almost certainly going to end up with an overwhelming number of events hitting your system. In our case, we're
@@ -317,39 +341,66 @@ The purpose of grouping isn't to ensure that you catch everything under the bann
 managing incidents by aggregating a large number of events into a small number of incident entries.
 
 ### Context Collection
-While filtering and grouping of alerts will get you most of the way towards a functional stack and will certainly provide you with a much more manageable NOC dashboard, if you really want to provide an offering that drives organizational value, you're going to want to differentiate yourself from everything else out there that does "AI powered alerting"... Yes [Moogsoft](https://www.moogsoft.com/), I'm looking at you!
+While filtering and grouping of alerts will get you most of the way towards a functional stack and will certainly provide you with a much more
+manageable NOC dashboard, if you really want to provide an offering that drives organizational value, you're going to want to differentiate
+yourself from everything else out there that does "AI powered alerting"... Yes [Moogsoft](https://www.moogsoft.com/), I'm looking at you!
 
-The best way to provide this value add is to expose contextual information that an engineer would need to seek out in their process of identifying and triaging the problem. This might mean collecting related logs and injecting them into your alert, or showing the system metrics that preceded a rise in application latency. You might gather information from your runbooks for the service, find recent occurrences of the same or similar problems to draw useful information from and provide a list of recent changes made. All of these things can help an engineer quickly and accurately track down why a service is encountering problems before they have even clicked the **Acknowledge** button on their pager.
+The best way to provide this value add is to expose contextual information that an engineer would need to seek out in their process of identifying
+and triaging the problem. This might mean collecting related logs and injecting them into your alert, or showing the system metrics that preceded
+a rise in application latency. You might gather information from your runbooks for the service, find recent occurrences of the same or similar
+problems to draw useful information from and provide a list of recent changes made. All of these things can help an engineer quickly and accurately
+track down why a service is encountering problems before they have even clicked the **Acknowledge** button on their pager.
 
-One of the lessons we've learnt the hard way is that humans are terrible at executing runbooks. Either the runbook is missing information necessary for the human to do their job, or the human misses the important parts because there's too much information, or they simply get really good at remembering `v$PREVIOUS` of the runbook and doing all the right steps for the service we replaced 3 months ago. You can try and fix the people, but that rarely scales. Fixing the systems that support those people has yielded much better and more consistent results, enabling engineers to triage problems faster, more consistently and more reliably than they were ever able to do before.
+One of the lessons we've learnt the hard way is that humans are terrible at executing runbooks. Either the runbook is missing information necessary
+for the human to do their job, or the human misses the important parts because there's too much information, or they simply get really good at
+remembering `v$PREVIOUS` of the runbook and doing all the right steps for the service we replaced 3 months ago. You can try and fix the people,
+but that rarely scales. Fixing the systems that support those people has yielded much better and more consistent results, enabling engineers to
+triage problems faster, more consistently and more reliably than they were ever able to do before.
 
 ### Alerting
-Until this point, we've built a really good data acquisition system and not really involved humans in handling the failures it detects. The purpose of a monitoring stack is generally to get a human involved, so let's talk about how to do that.
+Until this point, we've built a really good data acquisition system and not really involved humans in handling the failures it detects. The
+purpose of a monitoring stack is generally to get a human involved, so let's talk about how to do that.
 
-In our experience, there are really three categories of alert. Alerts which need to **page a human**, alerts which need **follow-up by a human** and advisory alerts which are **nice for a human to know about**.
+In our experience, there are really three categories of alert. Alerts which need to **page a human**, alerts which need **follow-up by a human**
+and advisory alerts which are **nice for a human to know about**.
 
 #### Paging
-The first category, pages, generally requires you to leverage a tool which is designed to wake people up at 0300 on a Sunday. There are a number of options on the market including [PagerDuty](https://www.pagerduty.com) and [xMatters](https://www.xmatters.com/), which one you chose is up to you but make sure that your company has a solid on-call policy in place, engineers have it configured correctly and that your service integrates correctly with it. You definitely don't want to discover during a major outage that any of those things were overlooked...
+The first category, pages, generally requires you to leverage a tool which is designed to wake people up at 0300 on a Sunday. There are a number
+of options on the market including [PagerDuty](https://www.pagerduty.com) and [xMatters](https://www.xmatters.com/), which one you chose is up to
+you but make sure that your company has a solid on-call policy in place, engineers have it configured correctly and that your service integrates
+correctly with it. You definitely don't want to discover during a major outage that any of those things were overlooked...
 
-Perhaps it goes without saying, but if you're paging someone, you're paying a pretty high human cost for a system failure. While it might not be feasible to do an RCA for every page you generate initially, your organization should be of the mindset that "being paged is not okay" and work hard towards ensuring that it only happens in extreme situations. An engineer shouldn't be paged more than a couple of times a year ideally and only in situations where it is absolutely critical that they step in to triage a major incident, if it happens more often than that, your systems need a lot of time and effort invested into improving their reliability.
+Perhaps it goes without saying, but if you're paging someone, you're paying a pretty high human cost for a system failure. While it might not be
+feasible to do an RCA for every page you generate initially, your organization should be of the mindset that "being paged is not okay" and work
+hard towards ensuring that it only happens in extreme situations. An engineer shouldn't be paged more than a couple of times a year ideally and
+only in situations where it is absolutely critical that they step in to triage a major incident, if it happens more often than that, your systems
+need a lot of time and effort invested into improving their reliability.
 
 #### Ticketing
-Regardless of whether you decide to page someone or not, you should have a ticket to track the work being performed to fix a problem. It doesn't much matter whether this ticket is being cut in [Jira](https://www.atlassian.com/software/jira), [GitHub](https://www.github.com) or your own in-house issue tracker. The point is that when someone starts working to triage an issue, they shoud have somewhere to document what they are doing and keep a record of whatever followup needs to take place.
+Regardless of whether you decide to page someone or not, you should have a ticket to track the work being performed to fix a problem. It doesn't
+much matter whether this ticket is being cut in [Jira](https://www.atlassian.com/software/jira), [GitHub](https://www.github.com) or your own
+in-house issue tracker. The point is that when someone starts working to triage an issue, they shoud have somewhere to document what they are
+doing and keep a record of whatever followup needs to take place.
 
-If you have decided that an event doesn't warrant a page, but should be looked at by a team, then placing a ticket in their work backlog is a great way to ensure that it gets processed without the cost of interrupting their daily workflow.
+If you have decided that an event doesn't warrant a page, but should be looked at by a team, then placing a ticket in their work backlog is a
+great way to ensure that it gets processed without the cost of interrupting their daily workflow.
 
-In our case, these tickets include all of the supporting context that we were able to collect and are intended to provide an engineer with everything they need to answer the following questions:
+In our case, these tickets include all of the supporting context that we were able to collect and are intended to provide an engineer with
+everything they need to answer the following questions:
 
  - What failed?
  - What is the impact of this failure?
  - How urgent is it that this failure be fixed?
  - What should I do to fix this failure?
  - Where should I start looking for the root cause of the failure?
- 
-This is accomplished by providing detailed information from the check, information about the infrastructure it is running on, links to other related alerts, metrics and logs for the impacted service and the details of any recent changes made to the service.
+
+This is accomplished by providing detailed information from the check, information about the infrastructure it is running on, links to other
+related alerts, metrics and logs for the impacted service and the details of any recent changes made to the service.
 
 #### Notifications
-Generally you'll want to notify people that an event has been processed and show them some type of visual indication of what the current state of it is. If done well, this can kickstart the response and help recruit engineers to repair a problem quickly after it occurs rather than waiting for their PM to review the ticket backlog and assign the work.
+Generally you'll want to notify people that an event has been processed and show them some type of visual indication of what the current
+state of it is. If done well, this can kickstart the response and help recruit engineers to repair a problem quickly after it occurs rather
+than waiting for their PM to review the ticket backlog and assign the work.
 
 In our case, we leverage [Slack](https://slack.com/) for this and use its attachments to present rich information about the failure and its state.
 
@@ -406,9 +457,9 @@ targets:
 
 Some additional things you probably want to do include:
 
-- Ensure that any alerts which are suppressed get logged somewhere that makes them easy to find. Also, make them visible
-  in your suppression tooling so that engineers can visually inspect the results of their suppressions.
-- If you support RegEx/wildcard matching, make sure that engineers can't suppress the world (same goes for empty `target`s).
+ - Ensure that any alerts which are suppressed get logged somewhere that makes them easy to find. Also, make them visible
+   in your suppression tooling so that engineers can visually inspect the results of their suppressions.
+ - If you support RegEx/wildcard matching, make sure that engineers can't suppress the world (same goes for empty `target`s).
 
 ## Final Thoughts
 Building a monitoring stack which supports your company's long term success is by no means a trivial challenge. The

@@ -2,7 +2,7 @@
 title: Git-Tool
 group: Tooling
 description: |
-    Manage your development directory automatically with this 
+    Manage your development directory automatically with this
     powerful developer productivity toolkit.
 permalinkPattern: /projects/:slug/
 date: 2021-02-11
@@ -13,7 +13,7 @@ releases: true
 ---
 
 # Git Tool
-**Simplify checking out your Git repositories in a structured directory space**
+**Simplify checking out your Git repositories in a structured directory space.**
 
 Git Tool is a powerful tool for managing your Git repositories, storing them in
 a consistent folder structure and simplifying access when you need it. One of
@@ -25,11 +25,11 @@ ready to start developing, even if the code wasn't already cloned.
 
 ## Features
 
-- **Quickly open repositories** whether they are already cloned locally or not, using your favourite Git services and a concise folder structure.
-- **Launch applications** within the context of your repositories quickly and consistently.
-- **Weekly scratchpads** to help organize random work and doodles with minimal effort.
-- **Aliases** to make opening your most common repositories as quick as possible.
-- **Fast autocompletion** on all platforms with support for "sequence search" (`ssgt` matches `SierraSoftworks/git-tool`) as found in Sublime and VSCode.
+ - **Quickly open repositories** whether they are already cloned locally or not, using your favourite Git services and a concise folder structure.
+ - **Launch applications** within the context of your repositories quickly and consistently.
+ - **Weekly scratchpads** to help organize random work and doodles with minimal effort.
+ - **Aliases** to make opening your most common repositories as quick as possible.
+ - **Fast autocompletion** on all platforms with support for "sequence search" (`ssgt` matches `SierraSoftworks/git-tool`) as found in Sublime and VSCode.
 
 ## Example
 
@@ -57,5 +57,3 @@ gt s
 
 ## Installation
 We've got a great [getting started guide](https://git-tool.sierrasoftworks.com/guide/) waiting for you.
-
-[release]: https://github.com/SierraSoftworks/git-tool/releases

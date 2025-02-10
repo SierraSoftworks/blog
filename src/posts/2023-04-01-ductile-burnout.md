@@ -71,22 +71,22 @@ one, or multiple, of these symptoms:
  - A feeling of detachment/withdrawal, increased cynicism, and/or reduced empathy.
  - A feeling of being ineffective, under-performing, and/or low morale.
 
- Crucially, it is important to recognize that all of the above are
- how the person experiencing burnout feels, and they may not have any bearing
- on their objective performance. Often, people who are burnt out will still
- continue to perform at a high level, however their feelings may not mirror
- this.
+Crucially, it is important to recognize that all of the above are
+how the person experiencing burnout feels, and they may not have any bearing
+on their objective performance. Often, people who are burnt out will still
+continue to perform at a high level, however their feelings may not mirror
+this.
 
- ## Ductile Burnout
- Now this is where we merge these two concepts. In most of the conversations
- I've had about burnout, there is a tendency to assume that it is primarily
- a matter of doing too much work, and that taking a holiday will allow the
- person enough time to recover.
+## Ductile Burnout
+Now this is where we merge these two concepts. In most of the conversations
+I've had about burnout, there is a tendency to assume that it is primarily
+a matter of doing too much work, and that taking a holiday will allow the
+person enough time to recover.
 
- My personal experience is that this is rarely, if ever, the case. In my
- quest to quantify my experience, I came across the idea of elastic and
- plastic deformation as a metaphor for how burnout impacts people and why
- what may work to alleviate it for some may not work for others.
+My personal experience is that this is rarely, if ever, the case. In my
+quest to quantify my experience, I came across the idea of elastic and
+plastic deformation as a metaphor for how burnout impacts people and why
+what may work to alleviate it for some may not work for others.
 
 <Figure src="https://cdn.sierrasoftworks.com/blog/youngs_modulus.svg" alt="A chart showing the Young's modulus of a ductile material">
 

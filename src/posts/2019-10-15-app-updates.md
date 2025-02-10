@@ -40,7 +40,6 @@ executable and this makes unlinking the file (deleting it) impossible while the 
 The three phase update solves this by having the application shutdown to facilitate the update, however
 that also removes your ability to keep executing code to orchestrate the update...
 
-
 ## Three Phase Updates
 
 ### Preparation

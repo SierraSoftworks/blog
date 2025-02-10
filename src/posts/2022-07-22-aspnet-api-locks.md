@@ -109,7 +109,7 @@ procdump.exe -ma $PID memory.dmp
 You can then open up this memory dump in WinDbg and use the `!syncblk` command to look for any contested locks
 within your application. In our case, we found that the `System.Web.Caching.UsageBucket` had a very high `MonitorHeld`
 count and looking at one of the threads in question (using `!clrstack`) we found that this was being contested
-within the [`System.Web.Caching.UsageBucket.AddCacheEntry(System.Web.Caching.CacheEntry)` method](https://source.dot.net/#System.Runtime.Caching/System/Runtime/Caching/CacheUsage.cs,520)
+within the [`System.Web.Caching.UsageBucket.AddCacheEntry(System.Web.Caching.CacheEntry)` method][AddCacheEntry].
 
 Further up the stack trace, we found that this was being used within the `System.Web.Routing.RouteCollection.IsRouteToExistingFile(System.Web.HttpContextBase)`
 method called [here](https://referencesource.microsoft.com/#System.Web/Routing/RouteCollection.cs,197). This is
@@ -118,3 +118,5 @@ what led us to the idea of using the `RouteExistingFiles` option to bypass this 
 Hopefully you'll find this useful, as you can see there's a ton of valuable information to be gleaned from
 memory analysis and tools like [https://referencesource.microsoft.com](https://referencesource.microsoft.com)
 and I'd encourage you to try them out the next time you run into an unexplained performance problem.
+
+[AddCacheEntry]: https://source.dot.net/#System.Runtime.Caching/System/Runtime/Caching/CacheUsage.cs,520

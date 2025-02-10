@@ -117,7 +117,7 @@ impl Complex {
     pub fn new(real: f64, imaginary: f64) -> Self {
         Self { real, imaginary }
     }
-    
+
     pub fn to_polar(&self) -> (f64, f64) {
         // Don't you just love Rust's lovely math extensions?
         let r = (self.real.powi(2) + self.imaginary.powi(2)).sqrt();

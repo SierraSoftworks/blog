@@ -8,11 +8,17 @@ sitemap: false
 comments: false
 ---
 
-I've just spent the last month rewriting the core component in a monitoring stack which is responsible for protecting the availability of a billion dollar per year franchise. The purpose of this rewrite was to improve the ability of our engineers to implement new features in a safe, quick and easy way - what we delivered ended up offering a four order of magnitude performance and efficiency improvement over our previous system.
+I've just spent the last month rewriting the core component in a monitoring stack which is responsible for protecting the availability
+of a billion dollar per year franchise. The purpose of this rewrite was to improve the ability of our engineers to implement new features
+in a safe, quick and easy way - what we delivered ended up offering a four order of magnitude performance and efficiency improvement
+over our previous system.
 
-Let's talk about how that happened, why it was possible and how we achieved that without it being a focal point of the redesign. I'm going to discuss evented input-output, often referred to as `async`.
+Let's talk about how that happened, why it was possible and how we achieved that without it being a focal point of the redesign.
+I'm going to discuss evented input-output, often referred to as `async`.
 
-Hopefully, by the time you've finished reading this article you should have a good grasp of what evented IO is, how it works and some of the situations in which it has a lot to offer - as well as some of the significant advantages it has over alternative approaches when we start talking about large scale production systems.
+Hopefully, by the time you've finished reading this article you should have a good grasp of what evented IO is, how it works and
+some of the situations in which it has a lot to offer - as well as some of the significant advantages it has over alternative
+approaches when we start talking about large scale production systems.
 
 <!--more-->
 
@@ -24,7 +30,8 @@ Hopefully, by the time you've finished reading this article you should have a go
 
 ## Effects on Scalability
 
-> **TODO**: Talk about how blocking I/O requires you to scale your compute resources to meet the needs of increased latency. Show maths that demonstrates this for a given pipeline.
+> **TODO**: Talk about how blocking I/O requires you to scale your compute resources to meet the needs of increased latency.
+> Show maths that demonstrates this for a given pipeline.
 
 ### How a simple application behaves
 

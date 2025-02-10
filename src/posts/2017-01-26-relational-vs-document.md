@@ -89,7 +89,6 @@ functionality onto more static datastores. In these environments an Agile approa
 to schema design, backed by a set of practical guidelines and sound advice from
 consulting DBAs will often realize better gains.
 
-
 ## Data Locality
 In a document datastore, the presence of most data in a single document removes much
 of the burden on the datastore when it comes to querying and returning that data.
@@ -145,7 +144,7 @@ Where this approach doesn't work anywhere near as well is in an environment wher
 model rapidly evolves as your application develops, or even as your application is configured.
 That isn't to say that these problems can't be solved by RDBMSes, but they place a burden
 on the consumer to provide them with a complete, structured definition of the data they will
-be storing. 
+be storing.
 
 ### The Document Paradigm
 Enter the document approach to data persistence. Certainly nothing new, it offers some intersting
@@ -246,7 +245,6 @@ not necessarily the same between each log entry, one must either create a number
 models to represent each possible configuration, or one must fall back on storing blob data
 which cannot be indexed, effectively queried or aggregated.
 
-
 <Figure src="https://cdn.sierrasoftworks.com/blog/relational_document_audit_table.png" :width="33">
 Relational Audit Structure
 </Figure>
@@ -289,7 +287,9 @@ databases.
 Our API will look something like the following...
 
 ##### API
+
 ###### Create a Document
+
 ```http
 POST /api/v1/c/my_collection HTTP/1.1
 Content-Type: application/json; charset=utf-8
@@ -312,6 +312,7 @@ Content-Type: application/json; charset=utf-8
 ```
 
 ###### Update a Document
+
 ```http
 PATCH /api/v1/c/my_collection/1 HTTP/1.1
 Content-Type: application/json; charset=utf-8
@@ -334,6 +335,7 @@ Content-Type: application/json; charset=utf-8
 ```
 
 ###### Get a Document
+
 ```http
 GET /api/v1/c/my_collection/1 HTTP/1.1
 ```
@@ -350,6 +352,7 @@ Content-Type: application/json; charset=utf-8
 ```
 
 ###### Find Documents
+
 ```http
 GET /api/v1/c/my_collection?x=1 HTTP/1.1
 ```
@@ -436,11 +439,12 @@ def create_document(self, req):
         ))
 
 def get_document(self, req):
-    fields = self.db.run("SELECT field.key, field.value FROM field JOIN entry ON entry.ID = field.entry WHERE entry.collection = '{0}' AND entry.ID = {1}".format(req.params.collection, req.params.id))
+    fields = self.db.run(
+        f"SELECT field.key, field.value FROM field JOIN entry ON entry.ID = field.entry WHERE entry.collection = '{req.params.collection}' AND entry.ID = {req.params.id}")
     data = {
         "id": req.params.id
     }
-    
+
     for field in fields:
         self.set_field(data, field.key, json.loads(field.value))
 
@@ -454,7 +458,7 @@ def update_document(self, req):
             field.key,
             field.value
         ))
-    
+
     return self.get_document(req)
 
 def find_documents(self, req):
@@ -468,14 +472,15 @@ def find_documents(self, req):
             entry_query = query
 
     entry_ids = self.db.run(entry_query)
-    
+
     entries = []
     for eid in entry_ids:
-        fields = self.db.run("SELECT field.key, field.value FROM field JOIN entry ON entry.ID = field.entry WHERE entry.collection = '{0}' AND entry.ID = {1}".format(req.params.collection, req.params.id))
+        fields = self.db.run(
+            f"SELECT field.key, field.value FROM field JOIN entry ON entry.ID = field.entry WHERE entry.collection = '{req.params.collection}' AND entry.ID = {req.params.id}")
         data = {
             "id": req.params.id
         }
-        
+
         for field in fields:
             self.set_field(data, field.key, json.loads(field.value))
 
@@ -526,5 +531,4 @@ meet cost and time deadlines.
 [Normalization]: https://en.wikipedia.org/wiki/Database_normalization
 [NoSQL]: https://en.wikipedia.org/wiki/NoSQL
 [RDBMS]: https://en.wikipedia.org/wiki/Relational_database_management_system
-[Sharding]: https://en.wikipedia.org/wiki/Shard_(database_architecture)
 [SQL]: https://en.wikipedia.org/wiki/SQL

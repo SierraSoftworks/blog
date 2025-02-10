@@ -51,8 +51,6 @@ export default {
             return yearsList
         })
 
-
-
         return {
             search,
             years

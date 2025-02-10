@@ -33,6 +33,7 @@ a method for planning how your team works on a daily basis.
 <!-- more -->
 
 ## Background
+
 ### Disclaimer
 I'll start out by saying that I'm no management consultant, I've read far fewer books on the
 topic than several of my colleagues and I'm young enough that I've still got plenty of mistakes
@@ -62,7 +63,6 @@ finger at the cruise control.
 
 To address this, we introduce the concept of feedback - letting the controller compare the output
 to what was requested and making adjustments as necessary.
-
 
 ```mermaid
 graph LR
@@ -205,7 +205,7 @@ of success is how much of our time was spent working on the most important stuff
 to our total time spent working. In an ideal world, we would only work on the most important
 things, but in reality there's plenty to distract us or demand attention.
 
-We're using this as a chance to reflect on our prioritization of those interrupts and refine 
+We're using this as a chance to reflect on our prioritization of those interrupts and refine
 our internal priority gauges. If we mis-prioritized something, we'll talk about what factored
 into that and what we could have known beforehand. If we correctly prioritized something, we'll
 talk about how we got it right and share that.
@@ -279,19 +279,21 @@ important stuff, rather than on whether something was completed.
 
 > #### Person A
 > **Priorities** (*at the start of the week*)
+>
 > 1. Thing X
 > 2. Thing Y
 > 3. Thing Z
-> 
+>
 > **Risks** (*at the start of the week*)
-> - A could happen
-> - B could be true
-> - C is an unknown
-> 
+>
+>  - A could happen
+>  - B could be true
+>  - C is an unknown
+>
 > **Remarks** (*at the end of the week*)
-> - X went well
-> - Started on Y, but B turned out to be true, which blocked me there
-> - Learnt more about C and now Z doesn't seem important
+>
+>  - X went well
+>  - Started on Y, but B turned out to be true, which blocked me there
+>  - Learnt more about C and now Z doesn't seem important
 
 ---
-

@@ -14,20 +14,23 @@ the content of the license itself and is not a substitute for understanding the 
 
 ::: tip
 **You may:**
-- Use it for private, personal use.
+
+ - Use it for private, personal use.
 :::
 
 ::: warning
 **You must:**
-- Include the original license and copyright notice
+
+ - Include the original license and copyright notice
 :::
 
 ::: danger
 **You must not:**
-- Use it commercially without written permission
-- Distribute the software yourself
-- Modify the software
-- Hold us liable
+
+ - Use it commercially without written permission
+ - Distribute the software yourself
+ - Modify the software
+ - Hold us liable
 :::
 
 <!-- more -->

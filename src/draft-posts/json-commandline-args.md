@@ -69,5 +69,4 @@ The downside is that this method doesn't know, or care, about things like interp
 quote characters to convey meaning around escape sequences. In fact, it doesn't recognize that `'` is a quote character
 at all.
 
-
 <!-- more -->

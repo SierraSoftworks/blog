@@ -25,9 +25,8 @@ be done to maximize business value and minimize risk.
 ## Backup Storage Windows
 Regardless of how you're creating backups or where you're storing them,
 they are going to live for a period. For some organizations and systems
-thay may be decades or centuries, while for others the backup retention
+that may be decades or centuries, while for others the backup retention
 window may be measured in minutes.
-
 
 <Figure src="https://cdn.sierrasoftworks.com/blog/rotating_backups_intervals.svg">
 
@@ -83,7 +82,6 @@ that you want to have access to.
 At its most innocuous, data loss can simply be someone accidentally deleting
 the wrong file. This happens a lot more frequently than you'd imagine and there
 have been a number of high profile instances like [GitLab's][gitlab-database-loss].
-
 
 <Figure src="https://cdn.sierrasoftworks.com/blog/rolling_backups_deletion.jpg">
 
@@ -201,7 +199,6 @@ and the probability of recovery can vary wildly.
 
 If you're in this boat, all I can do is wish you the best of luck and suggest you
 look at investing in a good backup solution if you survive the process.
-
 
 [CronJob]: https://kubernetes.io/docs/concepts/workloads/controllers/cron-jobs/
 [Kubernetes]: https://kubernetes.io/

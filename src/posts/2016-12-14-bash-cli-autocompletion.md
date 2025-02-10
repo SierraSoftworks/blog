@@ -14,7 +14,7 @@ tags:
 ::: tip
 If you haven't yet read the article on
 [Bash CLI](https://github.com/SierraSoftworks/bash-cli) then
-go [read it now](/post/bash-cli). 
+go [read it now](/post/bash-cli).
 :::
 
 Bash's ability to automatically provide suggested completions to a command
@@ -92,7 +92,7 @@ the application.
 
 ## Completion for Bash CLI
 Bash CLI's design means that it is always looking for files and folders relative to
-its application directory. This makes the process of providing options rather 
+its application directory. This makes the process of providing options rather
 straightforward, one just needs to list files and folders which match the command
 naming pattern relative to the current command directory.
 
