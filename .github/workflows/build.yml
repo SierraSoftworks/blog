@@ -42,6 +42,10 @@ jobs:
     - name: Lint Website
       run: npm run lint --if-present
 
+    - uses: streetsidesoftware/cspell-action@v6
+      with:
+        files: "**/*.md"
+
     - name: Build Website
       run: npm run build --if-present
 
