@@ -22,7 +22,7 @@
     "@vuepress/plugin-register-components": "2.0.0-rc.66",
     "@vuepress/plugin-seo": "^2.0.0-rc.74",
     "@vuepress/plugin-sitemap": "^2.0.0-rc.74",
-    "@vuepress/theme-default": "2.0.0-rc.74",
+    "@vuepress/theme-default": "2.0.0-rc.76",
     "@vuepress/utils": "2.0.0-rc.19",
     "cspell": "^8.17.3",
     "dayjs": "^1.11.13",
