@@ -1,4 +1,7 @@
 {
+  "include": [
+    "src/**/*.ts"
+  ],
   "compileOptions": {
     "moduleResolution": "node16"
   }
