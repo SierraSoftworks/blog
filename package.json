@@ -24,7 +24,7 @@
     "@vuepress/plugin-sitemap": "^2.0.0-rc.96",
     "@vuepress/theme-default": "2.0.0-rc.98",
     "@vuepress/utils": "2.0.0-rc.22",
-    "cspell": "^8.19.2",
+    "cspell": "^8.19.3",
     "dayjs": "^1.11.13",
     "markdown-it-abbr": "^2.0.0",
     "markdown-it-footnote": "^4.0.0",
