@@ -5,31 +5,31 @@
         <ul class="vp-sidebar-items vp-sidebar-items-extra">
           <p class="vp-sidebar-item vp-sidebar-heading">Extra Links</p>
           <li v-if="frontmatter.download">
-            <a :href="frontmatter.download as string" class="nav-link vp-sidebar-item">
+            <a :href="frontmatter.download as string" class="nav-link vp-sidebar-item" data-m:click="action=download;project={{ frontmatter.repo }}">
               Download
             </a>
           </li>
 
           <li v-if="frontmatter.docs">
-            <a :href="frontmatter.docs as string" class="nav-link vp-sidebar-item">
+            <a :href="frontmatter.docs as string" class="nav-link vp-sidebar-item" data-m:click="action=docs;project={{ frontmatter.repo }}">
               Documentation
             </a>
           </li>
 
           <li v-if="frontmatter.repo && frontmatter.releases">
-            <a :href="releasesUrl as string" class="nav-link vp-sidebar-item">
+            <a :href="releasesUrl as string" class="nav-link vp-sidebar-item" data-m:click="action=github/releases;project={{ frontmatter.repo }}">
               View Releases
             </a>
           </li>
 
           <li v-if="frontmatter.repo">
-            <a :href="repoUrl as string" class="nav-link vp-sidebar-item">
+            <a :href="repoUrl as string" class="nav-link vp-sidebar-item" data-m:click="action=github;project={{ frontmatter.repo }}">
               View on GitHub
             </a>
           </li>
 
           <li v-if="frontmatter.repo">
-            <a :href="issuesUrl as string" class="nav-link vp-sidebar-item">
+            <a :href="issuesUrl as string" class="nav-link vp-sidebar-item" data-m:click="action=github/issues;project={{ frontmatter.repo }}">
               Report an Issue
             </a>
           </li>
