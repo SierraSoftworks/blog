@@ -36,8 +36,8 @@ This allows you to ensure that a container is run every `H 0 * * *` - or every d
 
 Let's take a simple example that shows how one would convert a [Job][] to a [CronJob][] script.
 
-:::: code-group
-::: code-group-item Job
+::: code-tabs
+@tab Job
 
 ```yaml
 apiVersion: batch/v1
@@ -52,9 +52,7 @@ apiVersion: batch/v1
             image: hello-world
 ```
 
-:::
-
-::: code-group-item CronJob
+@tab CronJob
 
 ```yaml
 apiVersion: batch/v1beta1
@@ -73,7 +71,6 @@ apiVersion: batch/v1beta1
 ```
 
 :::
-::::
 
 As you can see from this example, it is actually pretty trivial to convert an existing Kubernetes
 [Job][] to a [CronJob][], making migrations quick and simple. You'll also notice that defining a
@@ -92,8 +89,8 @@ backup containers and lets you focus on exactly the task you want to perform.
 But let's not make this too easy, I personally want my backups to end up somewhere safe - otherwise what's the point?
 To achieve that, let's toss them over to S3 when we're done, giving us a [pretty reliable][s3-durability] place to keep track of them.
 
-:::: code-group
-::: code-group-item Dockerfile
+::: code-tabs
+@tab Dockerfile
 
 ```dockerfile
 # Fetch the mc command line client
@@ -121,9 +118,7 @@ ADD entrypoint.sh /app/entrypoint.sh
 ENTRYPOINT [ "/app/entrypoint.sh" ]
 ```
 
-:::
-
-::: code-group-item Entrypoint
+@tab Entrypoint
 
 ```bash
 #! /bin/bash
@@ -149,7 +144,6 @@ echo "Backup complete"
 ```
 
 :::
-::::
 
 We're going to use the [cdn][] command line client, a fully standards compliant S3 client, to
 upload our backup as it is created, so we grab the official binary and use Docker's new

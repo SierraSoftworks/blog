@@ -238,8 +238,8 @@ can take a look at the [code here](https://github.com/SierraSoftworks/vault-azfn
 Anyway, introducing that wrapper means that our new configuration should look something
 like the following (using Go's templating language to inject environment variables into the config):
 
-:::: code-group
-::: code-group-item vault.hcl.tpl
+::: code-tabs
+@tab vault.hcl.tpl
 
 ```hcl{4,9,14-16}
 ui = true
@@ -261,9 +261,7 @@ storage "azure" {
 }
 ```
 
-:::
-
-::: code-group-item host.json
+@tab host.json
 
 ```json{15,17}
 {
@@ -293,7 +291,6 @@ storage "azure" {
 ```
 
 :::
-::::
 
 ### Limiting Concurrency
 The next problem you'll run into is that the Azure Storage backend for Vault doesn't

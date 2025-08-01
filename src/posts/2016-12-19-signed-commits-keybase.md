@@ -252,23 +252,20 @@ section where you can add a new GPG key.
 To do this, you'll want to export your public GPG key with its various identities
 and paste the armored data in GitHub.
 
-:::: code-group
-::: code-group-item Powershell
+::: code-tabs
+@tab Powershell
 
 ```powershell
 gpg --armor --export $user@keybase.io | clip
 ```
 
-:::
-
-::: code-group-item Bash
+@tab Bash
 
 ```bash
 gpg --armor --export $user@keybase.io
 ```
 
 :::
-::::
 
 Once you've copied your public key from the command above (the PowerShell one will
 automatically add it to your clipboard on Windows machines), just paste the result

@@ -515,9 +515,9 @@ generation of infinite sequences.
 You'll find these in a number of languages and in most cases the interface is
 extremely similar.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item C#
+@tab C#
 
 ```csharp
 /// <summary>
@@ -539,9 +539,7 @@ public interface IEnumerator<T>
 }
 ```
 
-:::
-
-::: code-group-item Python
+@tab Python
 
 ```python
 class Iterator:
@@ -559,8 +557,6 @@ class Iterator:
 ```
 
 :::
-
-::::
 
 Some of these languages go one step further and provide
 [syntax sugar](https://en.wikipedia.org/wiki/Syntactic_sugar) to make

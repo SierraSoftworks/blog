@@ -65,8 +65,8 @@ the Docker API and pull the information it needs to configure itself.
 We'll also expose ports `80` and `8080`, the `http` listener and Traefik's web
 dashboard respectively.
 
-:::: code-group
-::: code-group-item PowerShell
+::: code-tabs
+@tab PowerShell
 
 ```powershell
 docker service create --name traefik `
@@ -82,9 +82,7 @@ docker service create --name traefik `
         --docker.domain=localhost
 ```
 
-:::
-
-::: code-group-item Bash
+@tab Bash
 
 ```bash
 docker service create --name traefik \
@@ -101,7 +99,6 @@ docker service create --name traefik \
 ```
 
 :::
-::::
 
 You'll notice that we're passing a couple of command line options to Traefik here,
 specifically the following.
@@ -116,8 +113,8 @@ specifically the following.
 Now you'll want to spin up a container for us to play around with, let's use the
 excellent `ehazlett/docker-demo` container, which is perfect for this purpose.
 
-:::: code-group
-::: code-group-item PowerShell
+::: code-tabs
+@tab PowerShell
 
 ```powershell
 docker service create --name demo `
@@ -126,9 +123,7 @@ docker service create --name demo `
     ehazlett/docker-demo
 ```
 
-:::
-
-::: code-group-item Bash
+@tab Bash
 
 ```bash
 docker service create --name demo \
@@ -138,7 +133,6 @@ docker service create --name demo \
 ```
 
 :::
-::::
 
 Here we're telling Docker to run the service, connect it to the `http` network and set
 the `traefik.port` label, which Traefik will be looking for to determine how to connect

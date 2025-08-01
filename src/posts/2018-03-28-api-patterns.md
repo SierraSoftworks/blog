@@ -35,35 +35,29 @@ designing an API which can evolve as requirements change. There are a number of 
 one can take, including the use of HTTP Headers, version specific domains or even URL query
 parameters. My personal favourite is to simply include the API version in the URL's path.
 
-:::: code-group
-::: code-group-item path
+::: code-tabs
+@tab path
 
 ```http
 GET /api/v1/users HTTP/1.1
 Host: api.mycompany.com
 ```
 
-:::
-
-::: code-group-item query
+@tab query
 
 ```http
 GET /api/users?api-version=1.x HTTP/1.1
 Host: api.mycompany.com
 ```
 
-:::
-
-::: code-group-item host
+@tab host
 
 ```http
 GET /api/users HTTP/1.1
 Host: api-v1.mycompany.com
 ```
 
-:::
-
-::: code-group-item headers
+@tab headers
 
 ```http
 GET /api/users HTTP/1.1
@@ -72,7 +66,6 @@ Host: api.mycompany.com
 ```
 
 :::
-::::
 
 ### Identify API Routes
 Unsurprisingly, APIs tend to form part of a larger system. Depending on your use case,
@@ -83,8 +76,8 @@ to more easily identify related resources.
 To ensure that it is possible to provide a user interface on the same domain, it is often
 particularly helpful to prefix your various API methods with the `/api/` path component.
 
-:::: code-group
-::: code-group-item api
+::: code-tabs
+@tab api
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -102,9 +95,7 @@ Content-Type: application/json
 ]
 ```
 
-:::
-
-::: code-group-item ui
+@tab ui
 
 ```http
 GET /users HTTP/1.1
@@ -120,7 +111,6 @@ Content-Type: text/html
 ```
 
 :::
-::::
 
 ### Correct Verbs
 Put quite simply: use the right HTTP verb for your purpose. This makes it easy for someone
@@ -130,17 +120,15 @@ provide it without needing to dive through your docs.
 Remember that the more time someone spends writing their own code, the happier they
 are likely to be with your API. **Don't make your users' lives difficult.**
 
-:::: code-group
-::: code-group-item list
+::: code-tabs
+@tab list
 
 ```http
 GET /api/v1/users HTTP/1.1
 Host: app.mycompany.com
 ```
 
-:::
-
-::: code-group-item create
+@tab create
 
 ```http
 POST /api/v1/users HTTP/1.1
@@ -153,9 +141,7 @@ Content-Type: application/json
 }
 ```
 
-:::
-
-::: code-group-item replace
+@tab replace
 
 ```http
 PUT /api/v1/user/1 HTTP/1.1
@@ -168,9 +154,7 @@ Content-Type: application/json
 }
 ```
 
-:::
-
-::: code-group-item modify
+@tab modify
 
 ```http
 PATCH /api/v1/user/1 HTTP/1.1
@@ -182,9 +166,7 @@ Content-Type: application/json
 }
 ```
 
-:::
-
-::: code-group-item remove
+@tab remove
 
 ```http
 DELETE /api/v1/user/1 HTTP/1.1
@@ -192,7 +174,6 @@ Host: app.mycompany.com
 ```
 
 :::
-::::
 
 ### Correct Status Codes
 As with the verbs you make use of, the status codes returned by your API should be standards
@@ -227,8 +208,8 @@ ensure that anything which returns a list of items has a pluralized entity name.
 For example, if you are returning a list of users then you would make use of `/api/v1/users`
 while to fetch a single user you would use the `/api/v1/user/{id}` route.
 
-:::: code-group
-::: code-group-item plural
+::: code-tabs
+@tab plural
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -246,9 +227,7 @@ Content-Type: application/json
 ]
 ```
 
-:::
-
-::: code-group-item singular
+@tab singular
 
 ```http
 GET /api/v1/user/1 HTTP/1.1
@@ -265,7 +244,6 @@ Content-Type: application/json
 ```
 
 :::
-::::
 
 ### Specify Content Types
 While something that sounds pretty obvious on the surface, it is incredible how many
@@ -274,8 +252,8 @@ correct [MIME Type][mime-types] for the data you are sending to a client. This w
 enable them to intelligently process the data correctly and will reduce the amount of
 work that consumers need to perform when interacting with your service.
 
-:::: code-group
-::: code-group-item json
+::: code-tabs
+@tab json
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -293,9 +271,7 @@ Content-Type: application/json
 ]
 ```
 
-:::
-
-::: code-group-item html
+@tab html
 
 ```http
 GET /users HTTP/1.1
@@ -311,7 +287,6 @@ Content-Type: text/html
 ```
 
 :::
-::::
 
 #### `Accept` Bonus Points
 If possible, you should also support the `Accept` header in your API - allowing clients
@@ -320,8 +295,8 @@ operations engineers who need to quickly verify the state of your service in the
 or in situations where your clients are able to leverage advanced (or horrible) encoding
 schemes like ProtoBuf, MsgPack, XML+SOAP[^1] etc.
 
-:::: code-group
-::: code-group-item json
+::: code-tabs
+@tab json
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -339,9 +314,7 @@ Content-Type: application/json
 ]
 ```
 
-:::
-
-::: code-group-item html
+@tab html
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -358,7 +331,6 @@ Content-Type: text/html
 ```
 
 :::
-::::
 
 ### Support Compression
 [Compression][HTTP Compression] has been a commonly available part of the HTTP specification since `HTTP/1.1`
@@ -374,8 +346,8 @@ While you're at it, take a look at Google's [zopfli][] which offers a gzip compa
 with even better compression ratios for standard web content and is widely supported by most
 common web servers.
 
-:::: code-group
-::: code-group-item gzip
+::: code-tabs
+@tab gzip
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -391,7 +363,6 @@ Content-Encoding: gzip
 ```
 
 :::
-::::
 
 ## Complex Patterns
 At times, there are edge cases that the elementary patterns simply do not cover satisfactorily.
@@ -420,17 +391,15 @@ well.
 My personal preference is to have a specific `/search` endpoint for the `POST` verb to differentiate
 it from the creation pattern.
 
-:::: code-group
-::: code-group-item query
+::: code-tabs
+@tab query
 
 ```http
 GET /api/v1/users?name=Bob HTTP/1.1
 Host: app.mycompany.com
 ```
 
-:::
-
-::: code-group-item get body
+@tab get body
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -442,9 +411,7 @@ Content-Type: application/json
 }
 ```
 
-:::
-
-::: code-group-item post
+@tab post
 
 ```http
 POST /api/v1/users/search HTTP/1.1
@@ -457,7 +424,6 @@ Content-Type: application/json
 ```
 
 :::
-::::
 
 ### Rate Limiting
 If you're exposing an API to external customers, rate limiting is something you will likely find
@@ -481,8 +447,8 @@ they do not exhaust the number of available request tokens available to them.
 
 Of course, once the rate limit is hit, you should return an `429 Too Many Requests` status code.
 
-:::: code-group
-::: code-group-item normal
+::: code-tabs
+@tab normal
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -495,9 +461,7 @@ API-Bucket-Rate: 10
 []
 ```
 
-:::
-
-::: code-group-item limited
+@tab limited
 
 ```http
 GET /api/v1/users HTTP/1.1
@@ -509,7 +473,6 @@ API-Bucket-Rate: 10
 ```
 
 :::
-::::
 
 ## Bad Actors and Defensive API Design
 Not all of your API's consumers are going to be friendly neighbourhood developers looking to

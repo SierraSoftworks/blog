@@ -82,8 +82,8 @@ simple, accessible and reliable way to execute our playbooks from anywhere.
 
 In our particular case, we've wrapped our playbooks using files like the following.
 
-:::: code-group
-::: code-group-item Dockerfile
+::: code-tabs
+@tab Dockerfile
 
 ```dockerfile
 FROM sierrasoftworks/docker-ansible
@@ -94,9 +94,7 @@ ENTRYPOINT ["/ansible/run"]
 CMD []
 ```
 
-:::
-
-::: code-group-item bash
+@tab bash
 
 ```bash
 #!/bin/sh
@@ -145,7 +143,6 @@ fi
 ```
 
 :::
-::::
 
 This enables us to execute a remediation against a specific host by executing
 the following command on either Windows, Mac or Linux.

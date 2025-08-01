@@ -123,9 +123,9 @@ server, configuring the `bound_audiences` option to ensure that only these
 specific tokens are accepted by Vault. Doing so should help minimize the risk
 that a leaked token from another service is re-used to access Vault.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item Pull Requests
+@tab Pull Requests
 
 ```json{13-16,29}
 {
@@ -161,9 +161,7 @@ that a leaked token from another service is re-used to access Vault.
 }
 ```
 
-:::
-
-::: code-group-item Builds
+@tab Builds
 
 ```json{13-15,28}
 {
@@ -198,9 +196,7 @@ that a leaked token from another service is re-used to access Vault.
 }
 ```
 
-:::
-
-::: code-group-item Deployments
+@tab Deployments
 
 ```json{13-14,22,28}
 {
@@ -236,8 +232,6 @@ that a leaked token from another service is re-used to access Vault.
 ```
 
 :::
-
-::::
 
 Creating these roles is done using the Vault CLI (since the Vault Web UI doesn't have a fancy wizard for this) and because we're inserting complex
 JSON objects (arrays and maps), we're going to need to use `stdin` to pass
@@ -302,9 +296,9 @@ folder, while regular build should be able to access everything except
 `deploy/` and deployments should be able to access secrets within their
 corresponding environment's directory within `deploy/`.
 
-:::: code-group
+::: code-tabs
 
-::: code-group-item Pull Requests
+@tab Pull Requests
 
 ```hcl
 # role: github-actions-pr
@@ -315,9 +309,7 @@ path "secrets/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/pu
 }
 ```
 
-:::
-
-::: code-group-item Builds
+@tab Builds
 
 ```hcl
 # role: github-actions-build
@@ -332,9 +324,7 @@ path "secrets/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/de
 }
 ```
 
-:::
-
-::: code-group-item Deployments
+@tab Deployments
 
 ```hcl
 # role: github-actions-deploy
@@ -354,8 +344,6 @@ path "secret/data/repos/{{identity.entity.aliases.auth_oidc_012345678.name}}/dep
 ```
 
 :::
-
-::::
 
 To create these policies, you can either use the Vault Web UI (which works really well for this), or the CLI, which we'll show here. As with roles, we're
 going to use the `stdin` stream to pass in the policy definitions.
