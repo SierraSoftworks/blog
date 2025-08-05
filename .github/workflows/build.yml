@@ -62,7 +62,7 @@ jobs:
     needs: [build]
     steps:
       - name: Download Artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: site
           path: dist
@@ -90,7 +90,7 @@ jobs:
 
     steps:
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: site
           path: ./dist
@@ -124,7 +124,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: site
           path: ./dist
@@ -150,7 +150,7 @@ jobs:
 
     steps:
       - name: Download Artifacts for Website
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v5
         with:
           name: site
           path: ./dist
