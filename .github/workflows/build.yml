@@ -42,7 +42,7 @@ jobs:
     - name: Lint Website
       run: npm run lint --if-present
 
-    - uses: streetsidesoftware/cspell-action@v7
+    - uses: streetsidesoftware/cspell-action@v8
       with:
         files: "**/*.md"
 
