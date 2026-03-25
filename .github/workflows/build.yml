@@ -103,7 +103,7 @@ jobs:
           client-id: ${{ env.STAGING_DEPLOYMENT_CLIENT_ID }}
 
       - name: Copy Artifacts to Storage
-        uses: azure/CLI@v2
+        uses: azure/CLI@v3
         with:
           inlineScript: |
             echo "Uploading Site Contents"
@@ -163,7 +163,7 @@ jobs:
           client-id: ${{ env.LIVE_DEPLOYMENT_CLIENT_ID }}
 
       - name: Copy Artifacts to Storage
-        uses: azure/CLI@v2
+        uses: azure/CLI@v3
         with:
           inlineScript: |
             echo "Uploading Site Contents"
