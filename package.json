@@ -34,7 +34,7 @@
     "vuepress": "2.0.0-rc.30"
   },
   "dependencies": {
-    "katex": "^0.16.46",
+    "katex": "^0.16.47",
     "markdown-it-texmath": "^1.0.0"
   }
 }
