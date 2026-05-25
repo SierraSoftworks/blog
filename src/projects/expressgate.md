@@ -278,7 +278,8 @@ an upgrade the ExpressGate that you have updated to will result in a corrupt dis
 This is due to missing configuration files in the `/etc/models.d` folder for your netbook. In order to solve this problem you should do the following:
 
 First, while still using the version that came with your EeePC add [va-term.sqx][va-term.sqx] to the installation folder (ASUS.SYS).
-Then boot up into ExpressGate and launch a terminal. It will probably be a good idea to plug in a memory stick to copy the files that you will need off of your harddrive.
+Then boot up into ExpressGate and launch a terminal.
+It will probably be a good idea to plug in a memory stick to copy the files that you will need off of your harddrive.
 Once the terminal is launched type in the following:
 
 ```bash

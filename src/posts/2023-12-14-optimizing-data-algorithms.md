@@ -46,7 +46,7 @@ We commonly see Big-O notation representations like the following:
 
 | Big-O | Description |
 | ----- | ----------- |
-| $$O(1)$$  | As the input size increases, the execution time remains constant. |
+| $$O(1)$$ | As the input size increases, the execution time remains constant. |
 | $$O(log n)$$ | As the input size increases, the execution time increases logarithmically (i.e. slower than the input size increases). |
 | $$O(n)$$ | As the input size increases, the execution time increases linearly (i.e at the same rate as the input size increases). |
 | $$O(n^2)$$ | As the input size increases, the execution time increases quadratically (i.e. faster than the input size increases). |
