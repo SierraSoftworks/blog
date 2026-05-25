@@ -4,26 +4,16 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    types: [ opened, synchronize, reopened, closed ]
     branches: [ main ]
 
-env:
-  STAGING_DEPLOYMENT_CLIENT_ID: 9585b6c7-20f9-4756-9e8c-4b34585ac8ca
-  STAGING_STORAGE_CONTAINER: "$web"
-  STAGING_STORAGE_ACCOUNT: "blogsierrasoftworksbeta"
-
-  LIVE_DEPLOYMENT_CLIENT_ID: 63951991-4dc9-4524-92cb-53b73016393c
-  LIVE_STORAGE_CONTAINER: "$web"
-  LIVE_STORAGE_ACCOUNT: "blogsierrasoftworks"
-
 permissions:
+  contents: read
   id-token: write
   pages: write
 
 jobs:
   build:
     name: Build (Docs)
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
 
     steps:
@@ -55,64 +45,10 @@ jobs:
         name: site
         path: ./dist
 
-  deploy-webapps:
-    name: Deploy (Azure Static Web Apps)
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
-    needs: [build]
-    steps:
-      - name: Download Artifact
-        uses: actions/download-artifact@v8
-        with:
-          name: site
-          path: dist
-
-      - name: Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-          action: "upload"
-          app_location: "/dist"
-          api_location: ""
-          skip_app_build: true
-
-  deploy-staging:
-    name: Deploy Staging (Azure CDN)
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
-    runs-on: ubuntu-latest
-    needs: [build]
-
-    environment:
-      name: Staging
-      url: https://blog-staging.sierrasoftworks.com
-
-    steps:
-      - name: Download Artifacts for Website
-        uses: actions/download-artifact@v8
-        with:
-          name: site
-          path: ./dist
-
-      - name: Login to Azure
-        uses: azure/login@v3
-        with:
-          subscription-id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
-          tenant-id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
-          client-id: ${{ env.STAGING_DEPLOYMENT_CLIENT_ID }}
-
-      - name: Copy Artifacts to Storage
-        uses: azure/CLI@v3
-        with:
-          inlineScript: |
-            echo "Uploading Site Contents"
-            az storage blob sync --container '${{ env.STAGING_STORAGE_CONTAINER }}' --account-name ${{ env.STAGING_STORAGE_ACCOUNT }} --source ./dist
-
   deploy-gh-pages:
     name: Deploy Production (GitHub Pages)
     runs-on: ubuntu-latest
-    needs: [build, deploy-staging]
+    needs: [build]
     if: github.event_name == 'push'
 
     environment:
@@ -137,46 +73,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-
-  deploy-live:
-    name: Deploy Production (Azure CDN)
-    runs-on: ubuntu-latest
-    needs: [build, deploy-staging]
-    if: github.event_name == 'push'
-
-    environment:
-      name: Production
-      url: https://blog.sierrasoftworks.com
-
-    steps:
-      - name: Download Artifacts for Website
-        uses: actions/download-artifact@v8
-        with:
-          name: site
-          path: ./dist
-
-      - name: Login to Azure
-        uses: azure/login@v3
-        with:
-          subscription-id: "108b3ddb-53fb-4344-80b2-d6c151912be6"
-          tenant-id: "a26571f1-22b3-4756-ac7b-39ca684fab48"
-          client-id: ${{ env.LIVE_DEPLOYMENT_CLIENT_ID }}
-
-      - name: Copy Artifacts to Storage
-        uses: azure/CLI@v3
-        with:
-          inlineScript: |
-            echo "Uploading Site Contents"
-            az storage blob sync --container '${{ env.LIVE_STORAGE_CONTAINER }}' --account-name ${{ env.LIVE_STORAGE_ACCOUNT }} --source ./dist
-
-  cleanup:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "close"
