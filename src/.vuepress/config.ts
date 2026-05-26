@@ -27,7 +27,11 @@ export default defineUserConfig({
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['link', { rel: 'me', href: 'https://mastodon.online/@notheotherben' }],
     ['link', { rel: 'me', href: 'https://hachyderm.io/@notheotherben' }],
-    ['script', { defer: '', src: 'https://analytics.sierrasoftworks.com/script.js' }]
+    ['script', {
+      defer: '',
+      src: 'https://analytics.sierrasoftworks.com/script.js',
+      'data-website-id': 'a5eb8d82-61d4-4831-96a1-c5d81edcef96',
+    }]
   ],
 
   bundler: viteBundler(),
