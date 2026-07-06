@@ -28,9 +28,10 @@ export default defineUserConfig({
     ['link', { rel: 'me', href: 'https://mastodon.online/@notheotherben' }],
     ['link', { rel: 'me', href: 'https://hachyderm.io/@notheotherben' }],
     ['script', {
-      defer: '',
-      src: 'https://analytics.sierrasoftworks.com/script.js',
-      'data-website-id': 'a5eb8d82-61d4-4831-96a1-c5d81edcef96',
+      async: '',
+      src: 'https://analytics.sierrasoftworks.com/tracker.js',
+      'data-api': 'https://analytics.sierrasoftworks.com',
+      'data-auto-capture-exceptions': 'true',
     }]
   ],
 
