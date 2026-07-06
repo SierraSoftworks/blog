@@ -29,7 +29,7 @@ export default defineUserConfig({
     ['link', { rel: 'me', href: 'https://hachyderm.io/@notheotherben' }],
     ['script', {
       async: '',
-      src: 'https://analytics.sierrasoftworks.com/script.js',
+      src: 'https://analytics.sierrasoftworks.com/tracker.js',
       'data-api': 'https://analytics.sierrasoftworks.com',
       'data-auto-capture-exceptions': 'true',
     }]
