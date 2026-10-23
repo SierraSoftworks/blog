@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, toRef, watch } from 'vue'
-import mermaid from "mermaid/dist/mermaid.esm.min.mjs"
+import mermaid from "mermaid"
 
 mermaid.initialize({
   startOnLoad: true,
